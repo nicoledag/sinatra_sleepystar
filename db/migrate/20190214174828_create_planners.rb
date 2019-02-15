@@ -1,8 +1,9 @@
 class CreatePlanners < ActiveRecord::Migration
   def change
     create_table :planners do |t|
-      t.string :day
+      t.date :date
       t.string :wake_time
+      t.string :bed_time
       t.integer :baby_id
 
       t.timestamps null: false
