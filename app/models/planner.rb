@@ -1,6 +1,8 @@
 class Planner < ActiveRecord::Base
 
   belongs_to :baby
-	# has_many :users, through: :babies
+
+  #refers to as single terms.
+  #planner.babies
 
 end

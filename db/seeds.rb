@@ -1,5 +1,5 @@
 
-nicole = User.create(username: "Nicole", password: "hello767")
+@nicole = @user.babies.create(username: "Nicole", password: "hello767")
 sara = User.create(username: "Sara", password: "whatsup944")
 
 julie = Baby.create(name: "Julie", age: "15 months")
