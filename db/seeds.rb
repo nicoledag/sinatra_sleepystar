@@ -1,5 +1,5 @@
 
-@nicole = @user.babies.create(username: "Nicole", password: "hello767")
+@nicole = babies.create(username: "Nicole", password: "hello767")
 sara = User.create(username: "Sara", password: "whatsup944")
 
 julie = Baby.create(name: "Julie", age: "15 months")
@@ -14,3 +14,29 @@ alec_tuesday = Planner.create(day: "Tuesday", wake_time: "7:30am", bed_time: "8p
 
 kristi_monday = Planner.create(day: "Monday", wake_time: "6:30am", bed_time: "7pm")
 kristi_tuesday = Planner.create(day: "Tuesday", wake_time: "6:30am", bed_time: "7pm")
+
+# User
+# has_many :babies
+# #parent class
+# #user.babies
+#
+# has_many :planners, through: :babies
+# #parent class
+# #user.babies.planners
+
+# Baby
+# belongs_to :user
+# #refered to as single term
+# #baby.users
+# has_many :planners
+# #parent class
+# # baby.planners
+
+
+
+
+
+# Planner
+# belongs_to :baby
+#refers to as single terms.
+#planner.babies

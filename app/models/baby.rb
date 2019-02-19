@@ -4,6 +4,7 @@ class Baby < ActiveRecord::Base
   #refered to as single term
   #baby.users
 	has_many :planners
+  #parent class
   # baby.planners
 
 end
