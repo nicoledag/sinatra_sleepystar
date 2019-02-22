@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
-    erb :create_user
+    erb :"users/create_user"
   end
 
 
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 		 if user.save
 		     redirect "/login"
 		   else
-		     redirect "/failure"
+		     erb :"users/failure"
 		  end
     end
 
