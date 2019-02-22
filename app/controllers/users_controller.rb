@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  get '/welcome' do
+
+  end
+
   get '/users' do
     @user = User.all
 
@@ -24,8 +28,18 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
-
+    erb :create_user
   end
+
+
+  post '/signup' do
+    user = User.new(:username => params[:username], :password => params[:password])
+		 if user.save
+		     redirect "/login"
+		   else
+		     redirect "/failure"
+		  end
+    end
 
   get '/users/:id' do
     "this will be the users show route"
