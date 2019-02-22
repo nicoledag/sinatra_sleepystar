@@ -6,8 +6,6 @@ class UsersController < ApplicationController
     erb :"users/index"
   end
 
-
-
   get '/login' do
 
     erb :"users/login"
@@ -21,7 +19,7 @@ class UsersController < ApplicationController
 
         redirect "/users/#{user.id}"
     else
-      redirect "/login"
+       erb :"users/error"
     end
   end
 
