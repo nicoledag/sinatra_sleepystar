@@ -2,18 +2,18 @@
 nicole = User.create(username: "Nicole", password: "hello767")
 sara = User.create(username: "Sara", password: "whatsup944")
 
-nicole.babies.create(name: "Julie", age: "15 months")
-nicole.babies.create(name: "Alec", age: "6 months")
-sara.babies.create(name: "Kristi", age: "6 months")
+julie = Baby.create(name: "Julie", age: "15 months", user_id: nicole.id)
+alec = Baby.create(name: "Alec", age: "6 months", user_id: nicole.id)
+kristi = Baby.create(name: "Kristi", age: "6 months", user_id: sara.id)
 
-JulieMondayPlanner.create(date: "2019-2-11", day: "Monday", wake_time: "8am", bed_time: "8pm", baby_id: julie.id)
-JulieTuesdayPlanner.create(date: "2019-2-12", day: "Tuesday", wake_time: "8:30am", bed_time: "8:30pm", baby_id: julie.id)
+JulieMonday = Planner.create(date: "2019-2-11", day: "Monday", wake_time: "8am", bed_time: "8pm", baby_id: julie.id)
+JulieTuesday = Planner.create(date: "2019-2-12", day: "Tuesday", wake_time: "8:30am", bed_time: "8:30pm", baby_id: julie.id)
 
-AlecMondayPlanner.create(day: "Monday", wake_time: "7:30am", bed_time: "8pm", baby_id: alec.id)
-AlecTuesdayPlanner.create(day: "Tuesday", wake_time: "7:30am", bed_time: "8pm", baby_id: alec.id)
+AlecMonday = Planner.create(day: "Monday", wake_time: "7:30am", bed_time: "8pm", baby_id: alec.id)
+AlecTuesday = Planner.create(day: "Tuesday", wake_time: "7:30am", bed_time: "8pm", baby_id: alec.id)
 
-KristiMondayPlanner.create(day: "Monday", wake_time: "6:30am", bed_time: "7pm", baby_id: kristi.id)
-KristiTuesdayPlanner.create(day: "Tuesday", wake_time: "6:30am", bed_time: "7pm", baby_id: kristi.id)
+KristiMonday = Planner.create(day: "Monday", wake_time: "6:30am", bed_time: "7pm", baby_id: kristi.id)
+KristiTuesday = Planner.create(day: "Tuesday", wake_time: "6:30am", bed_time: "7pm", baby_id: kristi.id)
 
 # User
 # has_many :babies
