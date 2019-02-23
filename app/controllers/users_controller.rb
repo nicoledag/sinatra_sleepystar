@@ -34,6 +34,7 @@ class UsersController < ApplicationController
 
   post '/signup' do
     user = User.new(:username => params[:username], :password => params[:password])
+    #check if a user already exists when signing in so user isn't duplicated?
 		 if user.save
 		     redirect "/login"
 		   else
