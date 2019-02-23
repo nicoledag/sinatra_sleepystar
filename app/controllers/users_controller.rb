@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  get '/welcome' do
+  get '/home' do
 
   end
 
