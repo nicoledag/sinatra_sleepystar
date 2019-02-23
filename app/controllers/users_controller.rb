@@ -34,6 +34,7 @@ class UsersController < ApplicationController
 
   post '/users' do
     user = User.new(:username => params[:username], :password => params[:password])
+    #only persist a user that has a name and password.
     #check if a user already exists when signing in so user isn't duplicated?
 		 if user.save
 		     redirect "/login"
