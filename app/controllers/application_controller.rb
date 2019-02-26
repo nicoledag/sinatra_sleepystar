@@ -21,7 +21,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      @current_user ||= User.find_by(id: session[:user_id])
+      @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
       #reduce a few database calls.  memorization
       #create instance variable @current_user within scope of application controller.
       #the first time current_user is referenced and user is found.
