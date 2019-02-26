@@ -9,40 +9,45 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
+    # PREVENT SOMEONE SIGNING UP TWICE WITH THE SAME USERNAME.
+    @user = User.find_by(:username => params[:username])
 
-    # HOW DO YOU PREVENT SOMEONE SIGNING UP TWICE WITH THE SAME USERNAME
-    if params[:username] != "" && params[:password] != ""
-      @user = User.create(params)
-		  session[:user_id] = @user.id
-      binding.pry
+    if @user != nil
+      redirect '/login'
+    elsif
+      @user == nil && params[:username] != "" && params[:password] != ""
+      @new_user = User.create(params)
+		  session[:user_id] = @new_user.id
 
       redirect '/planners'
-		else
+	  else
 		  redirect '/signup'
-		 end
+		end
   end
 
-
   get '/login' do
-
-    erb :"users/login"
+    if logged_in?
+      redirect '/planners'
+    else
+      erb :"users/login"
+    end
   end
 
   post '/login' do
     user = User.find_by(:username => params[:username])
 
-     if user && user.authenticate(params[:password]) && user.username != ""
-       session[:user_id] = user.id
+    if user && user.authenticate(params[:password]) && user.username != ""
+      session[:user_id] = user.id
 
-        redirect "/users/#{user.id}"
+      redirect "planners"
     else
-       erb :"users/error"
+      redirect '/login'
     end
   end
 
-  get '/users/:id' do
-    "this will be the users show route"
-  end
+  # get '/users/:slug' do
+  #
+  # end
 
   get '/logout' do
     if logged_in?
