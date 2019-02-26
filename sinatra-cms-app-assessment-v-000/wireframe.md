@@ -28,3 +28,4 @@ Stretch Goals
 1) Return additional information to user such as shortest and longest nap for the past 7 days.  
 2) Add graphic art design and css styling.
 3) Display validation failures to user with error messages.
+4) Add slug
