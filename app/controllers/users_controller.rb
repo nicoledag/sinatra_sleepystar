@@ -8,17 +8,21 @@ class UsersController < ApplicationController
     end
   end
 
-
   post '/signup' do
-    user = User.new(:username => params[:username], :password => params[:password])
-    #only persist a user that has a name and password.
-    #check if a user already exists when signing in so user isn't duplicated?
-		 if user.save
-		     redirect "/login"
-		   else
-		     erb :"users/failure"
-		  end
-    end
+
+    # HOW DO YOU PREVENT SOMEONE SIGNING UP TWICE WITH THE SAME USERNAME
+    if params[:username] != "" && params[:password] != ""
+      @user = User.create(params)
+		  session[:user_id] = @user.id
+      binding.pry
+
+      redirect '/planners'
+		else
+		  redirect '/signup'
+		 end
+  end
+
+
   get '/login' do
 
     erb :"users/login"
@@ -36,9 +40,18 @@ class UsersController < ApplicationController
     end
   end
 
-
-
   get '/users/:id' do
     "this will be the users show route"
   end
-end
+
+  get '/logout' do
+    if logged_in?
+      session.clear
+      redirect '/login'
+    else
+      redirect '/'
+    end
+  end
+
+
+  end
