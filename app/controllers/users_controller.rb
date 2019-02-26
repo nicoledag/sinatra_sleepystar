@@ -1,15 +1,24 @@
 class UsersController < ApplicationController
 
-  get '/home' do
-
+  get '/signup' do
+    if logged_in?
+      redirect '/planners'
+    else
+      erb :"users/create_user"
+    end
   end
 
-  get '/users' do
-    @user = User.all
 
-    erb :"users/index"
-  end
-
+  post '/signup' do
+    user = User.new(:username => params[:username], :password => params[:password])
+    #only persist a user that has a name and password.
+    #check if a user already exists when signing in so user isn't duplicated?
+		 if user.save
+		     redirect "/login"
+		   else
+		     erb :"users/failure"
+		  end
+    end
   get '/login' do
 
     erb :"users/login"
@@ -27,21 +36,7 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/signup' do
-    erb :"users/create_user"
-  end
 
-
-  post '/signup' do
-    user = User.new(:username => params[:username], :password => params[:password])
-    #only persist a user that has a name and password.
-    #check if a user already exists when signing in so user isn't duplicated?
-		 if user.save
-		     redirect "/login"
-		   else
-		     erb :"users/failure"
-		  end
-    end
 
   get '/users/:id' do
     "this will be the users show route"
