@@ -2,9 +2,9 @@
 nicole = User.create(username: "Nicole", password: "hello767")
 sara = User.create(username: "Sara", password: "whatsup944")
 
-julie = Baby.create(name: "Julie", age: "15 months", user_id: nicole.id)
-alec = Baby.create(name: "Alec", age: "6 months", user_id: nicole.id)
-kristi = Baby.create(name: "Kristi", age: "6 months", user_id: sara.id)
+julie = Baby.create(name: "Julie", user_id: nicole.id)
+alec = Baby.create(name: "Alec", user_id: nicole.id)
+kristi = Baby.create(name: "Kristi", user_id: sara.id)
 
 JulieMonday = Planner.create(date: "2019-2-11", day: "Monday", wake_time: "8am", bed_time: "8pm", baby_id: julie.id)
 JulieTuesday = Planner.create(date: "2019-2-12", day: "Tuesday", wake_time: "8:30am", bed_time: "8:30pm", baby_id: julie.id)
