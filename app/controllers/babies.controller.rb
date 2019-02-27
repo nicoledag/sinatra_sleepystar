@@ -1,15 +1,29 @@
 class BabiesController < ApplicationController
 
-  # get babies/new to render a form to create a new entry.
-  get '/babies' do
 
+  #index route for all baby entries.
+
+  get 'babies' do
+    if logged_in?
+      @babies = Baby.all
+      erb :'babies/babies'
+    end
+  end
+
+  # get babies/new to render a form to create a new entry.
+  get '/babies/new' do
+    if logged_in?
+     erb :'/babies/new'
+    else
+     redirect '/login'
+   end
   end
 
   #post babies to create a new baby entry.
 
   #show route for a baby entry.
 
-  #index route for all baby entries.
+
 
   #get babies/:id/edit to render form to edit a baby.
 
