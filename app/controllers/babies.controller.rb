@@ -21,7 +21,16 @@ class BabiesController < ApplicationController
 
   #post babies to create a new baby entry.
   post '/babies' do
-    
+    if logged_in? && params[:name] != ""
+      @baby = current_user.babies.build(params)
+      @baby.save
+      redirect "/babies/#{@baby.id}"
+
+    elsif logged_in? && params[:name] == ""
+      redirect 'babies/new'
+    else
+      redirect '/login'
+    end
   end
 
 
