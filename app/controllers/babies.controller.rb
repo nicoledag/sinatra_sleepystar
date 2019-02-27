@@ -1,12 +1,12 @@
 class BabiesController < ApplicationController
 
-
   #index route for all baby entries.
-
-  get 'babies' do
+  get '/babies' do
     if logged_in?
       @babies = Baby.all
       erb :'babies/babies'
+    else
+     redirect '/login'
     end
   end
 
@@ -20,10 +20,12 @@ class BabiesController < ApplicationController
   end
 
   #post babies to create a new baby entry.
+  post '/babies' do
+    
+  end
+
 
   #show route for a baby entry.
-
-
 
   #get babies/:id/edit to render form to edit a baby.
 
