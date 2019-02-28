@@ -44,10 +44,22 @@ class BabiesController < ApplicationController
   end
 
   #get babies/:id/edit to render form to edit a baby.
+  get '/babies/:id/edit' do
+    if logged_in?
+      @baby = current_user.babies.find_by(id: params[:id])
+      if @baby
+        erb :'/babies/edit_baby'
+      else
+        redirect '/babies'
+      end
+    else redirect '/login'
+    end
+  end
+
+
 
   #patch babies to update a baby.
 
   #delete babies to delete a baby.
-
 
 end
