@@ -9,31 +9,27 @@ Prerequisites
 
 What things you need to install the software and how to install them
 
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
-
-Run bundle install
-Run shotgun
+git clone git@github.com:nicoledag/sinatra_sleepystar.git
+cd sinatra_sleepystar
+bundle install
+rake db:migrate
 
 Built With
 Dropwizard - The web framework used
 Maven - Dependency Management
 ROME - Used to generate RSS Feeds
+
 Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+Bug reports and pull requests are welcome on GitHub at git@github.com:nicoledag/sinatra_sleepystar.git. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 Versioning
 We use SemVer for versioning. For the versions available, see the tags on this repository.
 
 Authors
-Billie Thompson - Initial work - PurpleBooth
-See also the list of contributors who participated in this project.
+Nicole Dagnenica
 
 License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 Acknowledgments
-Hat tip to anyone whose code was used
-Inspiration
-etc
+
