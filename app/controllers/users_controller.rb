@@ -10,14 +10,14 @@ class UsersController < ApplicationController
 
   post '/signup' do
     # PREVENT SOMEONE SIGNING UP TWICE WITH THE SAME USERNAME.
-    @user = User.find_by(:username => params[:username])
+    user = User.find_by(:username => params[:username])
 
-    if @user != nil
+    if user != nil
       redirect '/login'
     elsif
-      @user == nil && params[:username] != "" && params[:password] != ""
-      @new_user = User.create(params)
-		  session[:user_id] = @new_user.id
+      user == nil && params[:username] != "" && params[:password] != ""
+      new_user = User.create(params)
+		  session[:user_id] = new_user.id
 
       redirect '/planners'
 	  else
@@ -45,10 +45,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # get '/users/:slug' do
-  #
-  # end
-
   get '/logout' do
     if logged_in?
       session.clear
@@ -59,4 +55,4 @@ class UsersController < ApplicationController
   end
 
 
-  end
+end
