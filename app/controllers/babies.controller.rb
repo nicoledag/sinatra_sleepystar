@@ -38,9 +38,10 @@ class BabiesController < ApplicationController
   get '/babies/:id' do
     if logged_in?
       @baby = Baby.find(params[:id])
-      erb :'/babies/show_babies'
+      erb :'/babies/show_baby'
     else
       redirect '/login'
+    end
   end
 
   #get babies/:id/edit to render form to edit a baby.
