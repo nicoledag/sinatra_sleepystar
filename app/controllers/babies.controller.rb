@@ -3,7 +3,7 @@ class BabiesController < ApplicationController
   #index route for all baby entries.
   get '/babies' do
     if logged_in?
-      @babies = Baby.all
+      @babies = current_user.babies
       erb :'babies/babies'
     else
      redirect '/login'
@@ -32,7 +32,6 @@ class BabiesController < ApplicationController
       redirect '/login'
     end
   end
-
 
   #show route for a baby entry.
   get '/babies/:id' do

@@ -81,6 +81,14 @@
     margin-top: 20px;
     padding-top: 20px;
   }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+
+
 }
 
 @media screen and (max-width: 600px) {

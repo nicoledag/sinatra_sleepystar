@@ -1,1 +1,8 @@
-<h3>Here are all your babies: </h3>
+<h3><%=current_user.username.capitalize%>'s babies: </h3>
+<br>
+
+<%@babies.each do |baby| %>
+<h3><a href="/babies/<%=baby.id%>">
+  <p><%=baby.name%></p>
+</a></h3>
+<%end%>
