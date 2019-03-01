@@ -36,7 +36,7 @@ class BabiesController < ApplicationController
   #show route for a baby entry.
   get '/babies/:id' do
     if logged_in?
-      @baby = Baby.find(params[:id])
+      @baby = Baby.find_by(id: params[:id])
       erb :'/babies/show_baby'
     else
       redirect '/login'
@@ -45,20 +45,45 @@ class BabiesController < ApplicationController
 
   #get babies/:id/edit to render form to edit a baby.
   get '/babies/:id/edit' do
-    if logged_in?
-      @baby = current_user.babies.find_by(id: params[:id])
-      if @baby
-        erb :'/babies/edit_baby'
-      else
-        redirect '/babies'
-      end
-    else redirect '/login'
-    end
+   if logged_in?
+     @baby = current_user.babies.find_by(id: params[:id])
+     if @baby
+       erb :'/babies/edit_baby'
+     else
+       redirect '/babies'
+     end
+   else redirect '/login'
+   end
+ end
+
+  patch '/babies/:id' do
+    binding.pry
+   "Hello World"
   end
 
 
-
   #patch babies to update a baby.
+  # patch 'babies/:id' do
+  #   if logged_in?
+  #     binding.pry
+  #     @baby = current_user.babies.find_by(id: params[:id])
+  #   end
+  # end
+  #   if logged_in?
+  #     binding.pry
+  #     @baby = current_user.babies.find_by(id: params[:id])
+  #   #   if params[:name] != ""
+  #   #     @baby.update(name: params[:name])
+  #   #     redirect "/babies/#{@baby.id}"
+  #   #   else
+  #   #     redirect "/babies"
+  #   #   end
+  #   # else
+  #   #   redirect '/login'
+  #   end
+  # end
+
+
 
   #delete babies to delete a baby.
 

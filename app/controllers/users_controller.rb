@@ -10,8 +10,7 @@ class UsersController < ApplicationController
 
   post '/signup' do
     # PREVENT SOMEONE SIGNING UP TWICE WITH THE SAME USERNAME.
-    user = User.find_by(:username => params[:username])
-    binding.pry
+    user = User.find_by(:email => params[:email])
 
     if user != nil
       redirect '/login'
