@@ -1,0 +1,11 @@
+<h3>Edit your Baby here:</h3>
+
+<br>
+<form class="" action="/babies/<%=@baby.id%>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+
+  <label for="name">Baby's Name: </label>
+  <input type="text" name="name" value="<%=@baby.name%>">
+  <input type="submit" id="submit" value="Submit">
+</form>

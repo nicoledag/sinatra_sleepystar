@@ -48,7 +48,7 @@ class BabiesController < ApplicationController
    if logged_in?
      @baby = current_user.babies.find_by(id: params[:id])
      if @baby
-       erb :'/babies/edit_baby'
+       erb :'/babies/edit'
      else
        redirect '/babies'
      end
