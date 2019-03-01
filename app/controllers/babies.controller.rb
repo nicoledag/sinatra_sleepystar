@@ -46,7 +46,6 @@ class BabiesController < ApplicationController
   #get babies/:id/edit to render form to edit a baby.
   get '/babies/:id/edit' do
    if logged_in?
-
      @baby = current_user.babies.find_by(id: params[:id])
      if @baby
        erb :'/babies/edit'
@@ -57,6 +56,7 @@ class BabiesController < ApplicationController
    end
  end
 
+ #patch babies to update a baby.
   post '/babies/:id' do
     if logged_in?
       if params[:name] != ""
@@ -71,4 +71,21 @@ class BabiesController < ApplicationController
    end
  end
 
+ #delete babies to delete a baby.
+ delete '/babies/:id' do
+   if logged_in?
+     @baby = current_user.babies.find_by(id: params[:id])
+       if @baby
+         @baby.delete
+         redirect '/babies'
+       else
+         redirect '/babies'
+       end
+   else
+     redirect '/login'
+   end
+ end
+
 end
+
+#NEED TO LOOK AT EDIT AND DELETE METHODS
