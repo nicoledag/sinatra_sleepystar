@@ -21,6 +21,13 @@ Authors
 
 Nicole Dagnenica
 
+Technology Used
+Session and Bcrpt for secure session
+Active Record for database managment
+Ruby programming language
+HTML and CSS
+
+
 
 License
 
