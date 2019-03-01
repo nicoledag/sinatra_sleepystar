@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   #parent class
   #user.babies
 
-	has_many :planners, through: :babies
+	# has_many :planners, through: :babies
   #parent class
   #user.babies.planners
 end
