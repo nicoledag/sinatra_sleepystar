@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if user != nil
       redirect '/login'
     elsif
-      user == nil && params[:username] != "" && params[:password] != ""
+      user == nil && params[:username] != "" && params[:email] != "" && params[:password] != ""
       new_user = User.create(params)
 		  session[:user_id] = new_user.id
 
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   post '/login' do
     user = User.find_by(:username => params[:username])
 
-    if user && user.authenticate(params[:password]) && user.username != ""
+    if user && user.authenticate(params[:password]) && user.username != "" && params[:password] != ""
       session[:user_id] = user.id
 
       redirect "planners"
