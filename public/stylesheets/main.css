@@ -1,5 +1,4 @@
 
-
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
@@ -52,7 +51,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-image: url("/images/SLEEPYSTAR-BACKGROUND2.jpg");
+    background-image: url("/images/SLEEPYSTAR-BACKGROUND3.jpg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
