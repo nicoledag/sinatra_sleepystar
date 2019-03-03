@@ -21,7 +21,6 @@
       <br>
       <br>
 
-      <nav>
         <div class="topnav" id="myTopnav">
           <a href="/" class="active">Home</a>
           <a href="/babies/new">New Baby</a>
@@ -33,7 +32,7 @@
             <i class="fa fa-bars"></i>
           </a>
         </div>
-      </nav>
+
 
       <br>
 
@@ -49,6 +48,18 @@
         <small>&copy; 2019 <strong>Sleepy Star</strong></small>
       </footer>
     </div>
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!--[if lt IE 7]>
