@@ -21,6 +21,12 @@ class PlannersController < ApplicationController
 
   #post planners to create a new planner entry.
 
+  post '/planners' do
+
+
+  end
+
+
   #show route for a planner entry.
 
 
