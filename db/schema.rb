@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190301182754) do
+ActiveRecord::Schema.define(version: 20190304021719) do
 
   create_table "babies", force: :cascade do |t|
     t.string   "name"
@@ -25,9 +25,15 @@ ActiveRecord::Schema.define(version: 20190301182754) do
     t.string   "wake_time"
     t.string   "bed_time"
     t.integer  "baby_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "notes"
+    t.string   "morning_nap_start_time"
+    t.string   "morning_nap_end_time"
+    t.string   "midday_nap_start_time"
+    t.string   "midday_nap_end_time"
+    t.string   "late_afternoon_nap_start_time"
+    t.string   "late_afternoon_nap_end_time"
   end
 
   create_table "users", force: :cascade do |t|
