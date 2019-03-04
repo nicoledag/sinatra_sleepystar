@@ -1,5 +1,4 @@
-<h2><%=current_user.username.capitalize%>'s babies: </h2>
-<br>
+<h2><%=current_user.username.capitalize%>'s Babies </h2>
 
 <%@babies.each do |baby| %>
 <h3><a href="/babies/<%=baby.id%>">
