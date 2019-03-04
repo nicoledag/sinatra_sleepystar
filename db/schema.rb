@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190304021719) do
+ActiveRecord::Schema.define(version: 20190304024826) do
 
   create_table "babies", force: :cascade do |t|
     t.string   "name"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20190304021719) do
   end
 
   create_table "planners", force: :cascade do |t|
-    t.date     "date"
     t.string   "wake_time"
     t.string   "bed_time"
     t.integer  "baby_id"
