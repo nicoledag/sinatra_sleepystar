@@ -23,6 +23,7 @@ class PlannersController < ApplicationController
   #post planners to create a new planner entry.
 
   post '/planners' do
+    binding.pry
     if logged_in?
       if params[:baby][:name] == ""
         baby = Baby.find(params[:baby][:babys_id])
@@ -35,7 +36,7 @@ class PlannersController < ApplicationController
           end
 
      else params[:baby][:name] != ""
-        baby = Baby.new(name: params[:baby][:name])
+        baby = current_user.babies.build(name: params[:baby][:name])
         baby.save
 
         params[:baby][:planners].each do |p|
@@ -66,6 +67,7 @@ class PlannersController < ApplicationController
 
   get '/planners/:id/edit' do
    if logged_in?
+
      @planner = Planner.find_by(id: params[:id])
      @babies = Baby.all
      if @planner.baby.user == current_user
