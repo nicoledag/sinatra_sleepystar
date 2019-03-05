@@ -82,7 +82,7 @@ class PlannersController < ApplicationController
  end
 
   #patch planners to update a planner.
-  post '/planners/:id' do
+  patch '/planners/:id' do
   "please work"
   end
 
