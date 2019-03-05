@@ -82,6 +82,9 @@ class PlannersController < ApplicationController
  end
 
   #patch planners to update a planner.
+  post '/planners/:id' do
+  "please work"
+  end
 
   #delete planners to delete a planner.
 

@@ -59,7 +59,7 @@ class BabiesController < ApplicationController
  end
 
  #patch babies to update a baby.
-  post '/babies/:id' do
+  patch '/babies/:id' do
     if logged_in?
       @baby = Baby.find_by(id: params[:id])
       if @baby.user == current_user && params[:name] != ""

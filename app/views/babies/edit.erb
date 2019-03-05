@@ -2,10 +2,10 @@
 
 <br>
 <form class="" action="/babies/<%=@baby.id%>" method="post">
-  <input id="hidden" type="hidden" name="_method" value="patch">
+  <input type="hidden" name="_method" value="patch">
 
 
   <label for="name">Baby's Name: </label>
   <input type="text" name="name" id="name" value="<%=@baby.name%>">
-  <input type="submit" id="submit" value="Submit">
+  <input type="submit" value="Submit">
 </form>
