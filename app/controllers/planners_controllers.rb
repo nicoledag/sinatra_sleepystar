@@ -24,17 +24,28 @@ class PlannersController < ApplicationController
 
   post '/planners' do
     if logged_in?
+      binding.pry
       if params[:baby][:name] == ""
-      baby = Baby.find(params[:baby][:babys_id])
+        baby = Baby.find(params[:baby][:babys_id])
 
-      params[:baby][:planners].each do |p|
-        @planner = Planner.new(p)
-        @planner.baby = baby
-        @planner.save
-        redirect "/planners/#{@planner.id}"
+        params[:baby][:planners].each do |p|
+          @planner = Planner.new(p)
+          @planner.baby = baby
+          @planner.save
+          redirect "/planners/#{@planner.id}"
+          end
+
+     else params[:baby][:name] != ""
+        baby = Baby.new(name: params[:baby][:name])
+        baby.save
+
+        params[:baby][:planners].each do |p|
+          @planner = Planner.new(p)
+          @planner.baby = baby
+          @planner.save
+          redirect "/planners/#{@planner.id}"
+          end
         end
-      end
-
     else
       redirect '/login'
     end
