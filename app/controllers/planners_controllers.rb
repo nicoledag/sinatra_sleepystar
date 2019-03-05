@@ -13,6 +13,7 @@ class PlannersController < ApplicationController
   # get planners/new to render a form to create a new entry.
   get '/planners/new' do
     if logged_in?
+      @babies = Baby.all
      erb :'/planners/new'
     else
      redirect '/login'
@@ -23,7 +24,20 @@ class PlannersController < ApplicationController
 
   post '/planners' do
     binding.pry
+    if logged_in?
 
+      if params[:baby][:name] == ""
+      baby = Baby.find(params[:baby][:babys_id])
+
+      params[:baby][:planners].each do |p|
+        @planner = Planner.new(p)
+        @planner.baby = baby
+        @planner.save
+      end
+
+    else
+      redirect '/login'
+    end
   end
 
 
