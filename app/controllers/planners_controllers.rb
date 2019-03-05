@@ -24,7 +24,7 @@ class PlannersController < ApplicationController
 
   post '/planners' do
     if logged_in?
-
+binding.pry
        #WHAT IF A USER ENTERS A NEW BABY NAME AND SELECTS EXISTING NAME?
       if params[:baby][:name] == ""
         baby = Baby.find(params[:baby][:babys_id])

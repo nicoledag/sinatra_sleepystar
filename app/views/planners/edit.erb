@@ -22,11 +22,11 @@
 
   <br>
 
-  <h3>Select Sleep Times:</h3>
+  <h3>Edit Sleep Times:</h3>
 
   <br>
 
-  <label for="wake_time">Wake Time:</label> <select name="baby[planners][][wake_time]">
+  <label for="wake_time">Wake Time: ( <%=@planner.wake_time%> ) </label> <select name="baby[planners][][wake_time]">
     <option id="wake_time" name="baby[planners][][wake_time]" value="n/a">n/a</option>
     <option id="wake_time" name="baby[planners][][wake_time]" value="5:30am">5:30am</option>
     <option id="wake_time" name="baby[planners][][wake_time]" value="5:35am">5:35am</option>
@@ -85,7 +85,7 @@
     <br>
     <br>
 
-  <label for="morning_nap_start_time">Morning Nap - Start Time:</label> <select name="baby[planners][][morning_nap_start_time]">
+  <label for="morning_nap_start_time">Morning Nap - Start Time: ( <%=@planner.morning_nap_start_time%> ) </label> <select name="baby[planners][][morning_nap_start_time]">
     <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="n/a">n/a</option>
     <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:00am">7:00am</option>
     <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:05am">7:05am</option>
@@ -144,7 +144,7 @@
     <br>
     <br>
 
-  <label for="morning_nap_end_time">Morning Nap - End Time:</label> <select name="baby[planners][][morning_nap_end_time]">
+  <label for="morning_nap_end_time">Morning Nap - End Time: ( <%=@planner.morning_nap_end_time%> ) </label> <select name="baby[planners][][morning_nap_end_time]">
     <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="n/a">n/a</option>
     <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:00am">8:00am</option>
     <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:05am">8:05am</option>
@@ -203,7 +203,7 @@
     <br>
     <br>
 
-  <label for="midday_nap_start_time">Midday Nap - Start Time:</label> <select name="baby[planners][][midday_nap_start_time]">
+  <label for="midday_nap_start_time">Midday Nap - Start Time: ( <%=@planner.midday_nap_start_time%> ) </label> <select name="baby[planners][][midday_nap_start_time]">
     <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="n/a">n/a</option>
     <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:00am">11:00am</option>
     <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:05am">11:05am</option>
@@ -262,7 +262,7 @@
     <br>
     <br>
 
-   <label for="midday_nap_end_time">Midday Nap - End Time:</label><select name="baby[planners][][midday_nap_end_time]">
+   <label for="midday_nap_end_time">Midday Nap - End Time: ( <%=@planner.midday_nap_end_time%> ) </label><select name="baby[planners][][midday_nap_end_time]">
      <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="n/a">n/a</option>
      <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:00pm">12:00pm</option>
      <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:05pm">12:05pm</option>
@@ -308,7 +308,7 @@
     <br>
     <br>
 
-    <label for="late_afternoon_nap_start_time">Late Afternoon Nap - Start Time:</label> <select name="baby[planners][][late_afternoon_nap_start_time]">
+    <label for="late_afternoon_nap_start_time">Late Afternoon Nap - Start Time: ( <%=@planner.late_afternoon_nap_start_time%> ) </label> <select name="baby[planners][][late_afternoon_nap_start_time]">
       <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="n/a">n/a</option>
       <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:00pm">3:00pm</option>
       <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:05pm">3:05pm</option>
@@ -340,7 +340,7 @@
      <br>
      <br>
 
-     <label for="late_afternoon_nap_end_time">Late Afternoon Nap - End Time:</label> <select name="baby[planners][][late_afternoon_nap_end_time]">
+     <label for="late_afternoon_nap_end_time">Late Afternoon Nap - End Time: ( <%=@planner.late_afternoon_nap_end_time%> ) </label> <select name="baby[planners][][late_afternoon_nap_end_time]">
        <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="n/a">n/a</option>
        <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="3:30pm">3:30pm</option>
        <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="3:35pm">3:35pm</option>
@@ -374,7 +374,7 @@
       <br>
       <br>
 
-     <label for="bed_time">Bed Time:</label> <select name="baby[planners][][bed_time]">
+     <label for="bed_time">Bed Time: ( <%=@planner.bed_time%> ) </label> <select name="baby[planners][][bed_time]">
        <option id="bed_time" name="baby[planners][][bed_time]" value="n/a">n/a</option>
        <option id="bed_time" name="baby[planners][][bed_time]" value="5:30pm">5:30pm</option>
        <option id="bed_time" name="baby[planners][][bed_time]" value="5:35pm">5:35pm</option>
@@ -434,8 +434,8 @@
       <br>
       <br>
 
-  <label for="baby[planners][][notes]">Notes: </label>
-  <textarea name="notes" id="notes" rows="10" cols="100"></textarea>
+  <label for="notes">Notes: </label>
+  <textarea name="baby[planners][][notes]" id="notes" rows="10" cols="100" value="<%=@planner.notes%>" > </textarea>
 
 <br>
 <br>
