@@ -24,7 +24,6 @@ class PlannersController < ApplicationController
 
   post '/planners' do
     if logged_in?
-      binding.pry
       if params[:baby][:name] == ""
         baby = Baby.find(params[:baby][:babys_id])
 
