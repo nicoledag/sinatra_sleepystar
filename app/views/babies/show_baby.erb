@@ -1,11 +1,11 @@
-<h3>Baby: <%=@baby.name%></h3>
 <a href="/babies/<%=@baby.id%>/edit">Edit Baby</a>
 
+<h3>Baby: <%=@baby.name%></h3>
+
 <br>
 <br>
 
-<form class="" action="/babies/<%=@baby.id%>" method="post">
+<form method="post" action="/babies/<%=@baby.id%>">
 <input id="hidden" type="hidden" name="_method" value="delete">
-<input type="submit" name="" value="Delete">
-
+<input type="submit" value="Delete Baby">
 </form>
