@@ -23,9 +23,7 @@ class PlannersController < ApplicationController
   #post planners to create a new planner entry.
 
   post '/planners' do
-    binding.pry
     if logged_in?
-
       if params[:baby][:name] == ""
       baby = Baby.find(params[:baby][:babys_id])
 
@@ -33,6 +31,8 @@ class PlannersController < ApplicationController
         @planner = Planner.new(p)
         @planner.baby = baby
         @planner.save
+        redirect "/planners/#{@planner.id}"
+        end
       end
 
     else
@@ -42,7 +42,14 @@ class PlannersController < ApplicationController
 
 
   #show route for a planner entry.
-
+  get '/planners/:id' do
+    if logged_in?
+      @planner = Planner.find_by(id: params[:id])
+      erb :'/planners/show_planner'
+    else
+      redirect '/login'
+    end
+  end
 
 
   #get planners/:id/edit to render form to edit a planner.
