@@ -21,7 +21,6 @@ class BabiesController < ApplicationController
 
   #post babies to create a new baby entry.
   post '/babies' do
-
     if logged_in? && params[:name] != ""
       @baby = current_user.babies.build(params)
       @baby.save
@@ -46,11 +45,9 @@ class BabiesController < ApplicationController
   end
 
 
-
   #get babies/:id/edit to render form to edit a baby.
   get '/babies/:id/edit' do
    if logged_in?
-     binding.pry
      @baby = Baby.find_by(id: params[:id])
      if @baby.user == current_user
        erb :'/babies/edit'
@@ -62,7 +59,7 @@ class BabiesController < ApplicationController
  end
 
  #patch babies to update a baby.
-  post'/babies/:id' do
+  post '/babies/:id' do
     if logged_in?
       @baby = Baby.find_by(id: params[:id])
       if @baby.user == current_user && params[:name] != ""
@@ -79,7 +76,6 @@ class BabiesController < ApplicationController
  #delete babies to delete a baby.
  delete '/babies/:id' do
    if logged_in?
-   binding.pry
       @baby = Baby.find_by(id: params[:id])
        if @baby.user == current_user
          @baby.destroy
