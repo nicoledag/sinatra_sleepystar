@@ -5,4 +5,6 @@ class Planner < ActiveRecord::Base
   #refers to as single terms.
   #planner.babies
 
+
+
 end
