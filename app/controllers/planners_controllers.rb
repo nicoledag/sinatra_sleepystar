@@ -23,8 +23,9 @@ class PlannersController < ApplicationController
   #post planners to create a new planner entry.
 
   post '/planners' do
-    binding.pry
     if logged_in?
+
+       #WHAT IF A USER ENTERS A NEW BABY NAME AND SELECTS EXISTING NAME?
       if params[:baby][:name] == ""
         baby = Baby.find(params[:baby][:babys_id])
 
@@ -56,6 +57,7 @@ class PlannersController < ApplicationController
   get '/planners/:id' do
     if logged_in?
       @planner = Planner.find_by(id: params[:id])
+
       erb :'/planners/show_planner'
     else
       redirect '/login'
@@ -66,8 +68,8 @@ class PlannersController < ApplicationController
   #get planners/:id/edit to render form to edit a planner.
 
   get '/planners/:id/edit' do
-   if logged_in?
 
+   if logged_in?
      @planner = Planner.find_by(id: params[:id])
      @babies = Baby.all
      if @planner.baby.user == current_user

@@ -16,7 +16,7 @@
 
   <%@babies.each do |b|%>
   <label><%=b.name%></label>
-  <input type="checkbox" name="[baby][babys_id]" value="<%=b.id%>" id="baby_<%=b.id%>" <%='checked' if @babies.planner.include?(b) %>> </input>
+  <input type="checkbox" name="[baby][babys_id]" value="<%=b.id%>" id="baby_<%=b.id%>" <%='checked' if @planner.baby.id == b.id %>>
   <br>
   <%end%>
 
