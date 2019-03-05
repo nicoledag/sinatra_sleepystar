@@ -1,7 +1,7 @@
 
 Short Description
 
-This Sinatra application is designed for a user to track a Baby's sleep schedule.
+This Sinatra application is designed for a user to track a Baby's sleep schedule.  Recommended for baby's starting at age 4 months.
 
 
 Install Instructions
@@ -21,11 +21,14 @@ Authors
 
 Nicole Dagnenica
 
+
+
 Technology Used
+Object Oriented Ruby programming language
 Session and Bcrpt for secure session
 Active Record for database managment
-Ruby programming language
-HTML and CSS
+HTML and CSS for styling
+Photoshop for logo and background image
 
 
 
