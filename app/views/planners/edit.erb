@@ -1,11 +1,13 @@
-<h2>Create a Sleep Planner</h2>
+<h2>Edit a Sleep Planner</h2>
 <br>
 
-<form action="/planners" method="post">
+<form action="/planners/<%=@planner.id%>" method="post">
+<input id="hidden" type="hidden" name="_method" value="patch">
+
 
   <h3>Add Baby:</h3>
   <label for="name">Baby's Name: </label>
-  <input type="text" name="baby[name]" id="name">
+  <input type="text" name="baby[name]" id="name" value="<%=@planner.baby.name%>">
 
   <br>
   <br>
@@ -14,7 +16,7 @@
 
   <%@babies.each do |b|%>
   <label><%=b.name%></label>
-<input type="checkbox" name="[baby][babys_id]" value="<%=b.id%>" id="baby_<%=b.id%>"></input>
+  <input type="checkbox" name="[baby][babys_id]" value="<%=b.id%>" id="baby_<%=b.id%>" <%='checked' if @babies.planner.include?(b) %>> </input>
   <br>
   <%end%>
 

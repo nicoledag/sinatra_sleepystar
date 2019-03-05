@@ -64,6 +64,19 @@ class PlannersController < ApplicationController
 
   #get planners/:id/edit to render form to edit a planner.
 
+  get '/planners/:id/edit' do
+   if logged_in?
+     @planner = Planner.find_by(id: params[:id])
+     @babies = Baby.all
+     if @planner.baby.user == current_user
+       erb :'/planners/edit'
+     else
+       redirect '/planners'
+     end
+   else redirect '/login'
+   end
+ end
+
   #patch planners to update a planner.
 
   #delete planners to delete a planner.
