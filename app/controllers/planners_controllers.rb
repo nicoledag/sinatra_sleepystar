@@ -22,7 +22,7 @@ class PlannersController < ApplicationController
   #post planners to create a new planner entry.
 
   post '/planners' do
-
+    binding.pry
 
   end
 
