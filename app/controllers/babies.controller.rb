@@ -46,8 +46,8 @@ class BabiesController < ApplicationController
   #get babies/:id/edit to render form to edit a baby.
   get '/babies/:id/edit' do
    if logged_in?
-     @baby = current_user.babies.find_by(id: params[:id])
-     if @baby
+     @baby = Baby.find_by(id: params[:id])
+     if @baby.user == current_user
        erb :'/babies/edit'
      else
        redirect '/babies'
@@ -59,8 +59,8 @@ class BabiesController < ApplicationController
  #patch babies to update a baby.
   post '/babies/:id' do
     if logged_in?
-      if params[:name] != ""
-        @baby = current_user.babies.find_by(id: params[:id])
+      @baby = Baby.find_by(id: params[:id])
+      if @baby.user == current_user && params[:name] != ""
         @baby.update(name: params[:name])
         redirect "/babies/#{@baby.id}"
       else
