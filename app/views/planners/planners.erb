@@ -1,7 +1,18 @@
 <h2><%=current_user.username.capitalize%>'s Planners </h2>
 <br>
 
-<!-- # <%@planners.each do |planner| %>
-# <h3><a href="/planners/<%=planner.id%>">
-# </a></h3>
-# <%end%> -->
+<%@planners.each do |p| %>
+<a href="/planners/<%=p.id%>">
+  <br>
+  <h3>Baby: <%=p.baby.name%></h3></a>
+  <h3>Date: <%=p.created_at.strftime("%d-%m-%Y")%></h3>
+  <h3>Wake Time: <%=p.wake_time%></h3>
+  <h3>Morning Nap - Start Time: <%=p.morning_nap_start_time%></h3>
+  <h3>Morning Nap - End Time: <%=p.morning_nap_end_time%></h3>
+  <h3>Midday Nap - Start Time: <%=p.midday_nap_start_time%></h3>
+  <h3>Midday Nap - End Time: <%=p.midday_nap_end_time%></h3>
+  <h3>Late Afternoon Nap - Start Time: <%=p.late_afternoon_nap_start_time%></h3>
+  <h3>Late Afternoon Nap - End Time: <%=p.late_afternoon_nap_end_time%></h3>
+  <h3>Bed Time: <%=p.bed_time%></h3>
+  <h3>Notes: <%=p.notes%></h3>
+<%end%>
