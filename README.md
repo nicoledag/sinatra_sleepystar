@@ -17,32 +17,17 @@ Contributing
 Bug reports and pull requests are welcome on GitHub at git@github.com:nicoledag/sinatra_sleepystar.git. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
-Authors
+Authors:  Nicole Dagnenica
 
-Nicole Dagnenica
-
-Trademark
-2014 Sleepy Star
+Trademark:  2014 Sleepy Star
 
 
 
-Technology Used
-
-Object Oriented Ruby programming language
-
-Session and Bcrpt for secure session
-
-Active Record for database managment
-
-HTML and CSS for styling
-
-Photoshop for logo and background image
+Technology Used:  Object Oriented Ruby programming language, Session and Bcrpt for secure session, Active Record for database managment, HTML and CSS for styling, Photoshop for logo and background image
 
 
 
-License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+License:  The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 
 
