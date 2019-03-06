@@ -3,7 +3,7 @@ class PlannersController < ApplicationController
 #index route for all planner entries.
   get '/planners' do
     if logged_in?
-      @planners = Planner.all
+      @planners = current_user.planners
       erb :'planners/planners'
     else
      redirect '/login'
@@ -13,7 +13,7 @@ class PlannersController < ApplicationController
   # get planners/new to render a form to create a new entry.
   get '/planners/new' do
     if logged_in?
-      @babies = Baby.all
+      @babies = current_user.babies
      erb :'/planners/new'
     else
      redirect '/login'
@@ -71,7 +71,7 @@ class PlannersController < ApplicationController
 
    if logged_in?
      @planner = Planner.find_by(id: params[:id])
-     @babies = Baby.all
+     @babies = current_user.babies
      if @planner.baby.user == current_user
        erb :'/planners/edit'
      else
