@@ -7,7 +7,7 @@
 
   <h3>Add Baby:</h3>
   <label for="name">Baby's Name: </label>
-  <input type="text" name="baby[name]" id="name" value="<%=@planner.baby.name%>">
+  <input type="text" name="baby[name]" id="name" value="">
 
   <br>
   <br>
@@ -25,413 +25,45 @@
   <h3>Edit Sleep Times:</h3>
 
   <br>
+  <label for="wake_time">Wake Time:</label>
+  <input type="text" name="baby[planners][][wake_time]" id="wake_time">
+  <br>
+  <br>
 
-  <label for="wake_time">Wake Time: ( <%=@planner.wake_time%> ) </label> <select name="baby[planners][][wake_time]">
-    <option id="wake_time" name="baby[planners][][wake_time]" value="n/a">n/a</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="5:30am">5:30am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="5:35am">5:35am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="5:40am">5:40am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="5:45am">5:45am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="5:50am">5:50am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="5:55am">5:55am</option>
+  <label for="morning_nap_start_time">Morning Nap - Start Time:</label>
+  <input type="text" name="baby[planners][][morning_nap_start_time]" id="morning_nap_start_time">
+  <br>
+  <br>
 
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:00am">6:00am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:05am">6:05am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:10am">6:10am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:15am">6:15am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:20am">6:20am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:25am">6:25am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:30am">6:30am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:35am">6:35am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:40am">6:40am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:45am">6:45am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:50am">6:50am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="6:55am">6:55am</option>
+  <label for="morning_nap_end_time">Morning Nap - End Time:</label>
+  <input type="text" name="baby[planners][][morning_nap_end_time]" id="morning_nap_end_time">
+  <br>
+  <br>
 
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:00am">7:00am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:05am">7:05am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:10am">7:10am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:15am">7:15am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:20am">7:20am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:25am">7:25am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:30am">7:30am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:35am">7:35am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:40am">7:40am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:45am">7:45am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:50am">7:50am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="7:55am">7:55am</option>
+  <label for="midday_nap_start_time">Midday Nap - Start Time:</label>
+  <input type="text" name="baby[planners][][midday_nap_start_time]" id="midday_nap_start_time">
+  <br>
+  <br>
 
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:00am">8:00am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:05am">8:05am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:10am">8:10am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:15am">8:15am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:20am">8:20am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:25am">8:25am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:30am">8:30am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:35am">8:35am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:40am">8:40am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:45am">8:45am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:50am">8:50am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="8:55am">8:55am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="9:00am">9:00am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="9:05am">9:05am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="9:10am">9:10am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="9:15am">9:15am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="9:20am">9:20am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="9:25am">9:25am</option>
-    <option id="wake_time" name="baby[planners][][wake_time]" value="9:30am">9:30am</option>
-  </select>
+  <label for="midday_nap_end_time">Midday Nap - End Time:</label>
+  <input type="text" name="baby[planners][][midday_nap_end_time]" id="midday_nap_end_time">
+  <br>
+  <br>
 
-    <br>
-    <br>
+  <label for="late_afternoon_nap_start_time">Late Afternoon Nap - Start Time:</label>
+  <input type="text" name="baby[planners][][late_afternoon_nap_start_time]" id="late_afternoon_nap_start_time">
+  <br>
+  <br>
 
-  <label for="morning_nap_start_time">Morning Nap - Start Time: ( <%=@planner.morning_nap_start_time%> ) </label> <select name="baby[planners][][morning_nap_start_time]">
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="n/a">n/a</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:00am">7:00am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:05am">7:05am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:10am">7:10am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:15am">7:15am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:20am">7:20am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:25am">7:25am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:30am">7:30am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:35am">7:35am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:40am">7:40am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:45am">7:45am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:50am">7:50am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="7:55am">7:55am</option>
+  <label for="late_afternoon_nap_end_time">Late Afternoon Nap - End Time:</label>
+  <input type="text" name="baby[planners][][late_afternoon_nap_end_time]" id="late_afternoon_nap_end_time">
+  <br>
+  <br>
 
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:00am">8:00am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:05am">8:05am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:10am">8:10am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:15am">8:15am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:20am">8:20am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:25am">8:25am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:30am">8:30am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:35am">8:35am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:40am">8:40am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:45am">8:45am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:50am">8:50am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="8:55am">8:55am</option>
-
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:00am">9:00am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:05am">9:05am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:10am">9:10am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:15am">9:15am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:20am">9:20am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:25am">9:25am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:30am">9:30am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:35am">9:35am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:40am">9:40am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:45am">9:45am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:50am">9:50am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="9:55am">9:55am</option>
-
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:00am">10:00am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:05am">10:05am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:10am">10:10am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:15am">10:15am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:20am">10:20am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:25am">10:25am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:30am">10:30am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:35am">10:35am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:40am">10:40am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:45am">10:45am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:50am">10:50am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="10:55am">10:55am</option>
-    <option id="morning_nap_start_time" name="baby[planners][][morning_nap_start_time]" value="11:00am">11:00am</option>
-  </select>
-
-    <br>
-    <br>
-
-  <label for="morning_nap_end_time">Morning Nap - End Time: ( <%=@planner.morning_nap_end_time%> ) </label> <select name="baby[planners][][morning_nap_end_time]">
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="n/a">n/a</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:00am">8:00am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:05am">8:05am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:10am">8:10am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:15am">8:15am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:20am">8:20am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:25am">8:25am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:30am">8:30am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:35am">8:35am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:40am">8:40am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:45am">8:45am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:50am">8:50am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="8:55am">8:55am</option>
-
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:00am">9:00am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:05am">9:05am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:10am">9:10am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:15am">9:15am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:20am">9:20am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:25am">9:25am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:30am">9:30am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:35am">9:35am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:40am">9:40am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:45am">9:45am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:50am">9:50am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="9:55am">9:55am</option>
-
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:00am">10:00am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:05am">10:05am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:10am">10:10am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:15am">10:15am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:20am">10:20am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:25am">10:25am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:30am">10:30am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:35am">10:35am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:40am">10:40am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:45am">10:45am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:50am">10:50am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="10:55am">10:55am</option>
-
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:00am">11:00am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:05am">11:05am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:10am">11:10am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:15am">11:15am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:20am">11:20am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:25am">11:25am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:30am">11:30am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:35am">11:35am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:40am">11:40am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:45am">11:45am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:50am">11:50am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="11:55am">11:55am</option>
-    <option id="morning_nap_end_time" name="baby[planners][][morning_nap_end_time]" value="12:00pm">12:00pm</option>
-  </select>
-
-    <br>
-    <br>
-
-  <label for="midday_nap_start_time">Midday Nap - Start Time: ( <%=@planner.midday_nap_start_time%> ) </label> <select name="baby[planners][][midday_nap_start_time]">
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="n/a">n/a</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:00am">11:00am</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:05am">11:05am</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:10am">11:10am</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:15am">11:15am</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:20am">11:20am</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:25am">11:25am</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:30am">11:30am</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:35am">11:35am</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:40am">11:40am</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:45am">11:45am</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:50am">11:50am</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="11:55am">11:55am</option>
-
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:00pm">12:00pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:05pm">12:05pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:10pm">12:10pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:15pm">12:15pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:20pm">12:20pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:25pm">12:25pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:30pm">12:30pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:35pm">12:35pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:40pm">12:40pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:45pm">12:45pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:50pm">12:50pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="12:55pm">12:55pm</option>
-
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:00pm">1:00pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:05pm">1:05pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:10pm">1:10pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:15pm">1:15pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:20pm">1:20pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:25pm">1:25pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:30pm">1:30pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:35pm">1:35pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:40pm">1:40pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:45pm">1:45pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:50pm">1:50pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="1:55pm">1:55pm</option>
-
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:00pm">2:00pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:05pm">2:05pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:10pm">2:10pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:15pm">2:15pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:20pm">2:20pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:25pm">2:25pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:30pm">2:30pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:35pm">2:35pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:40pm">2:40pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:45pm">2:45pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:50pm">2:50pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:55pm">2:55pm</option>
-    <option id="midday_nap_start_time" name="baby[planners][][midday_nap_start_time]" value="2:55pm">2:55pm</option>
-   </select>
-
-    <br>
-    <br>
-
-   <label for="midday_nap_end_time">Midday Nap - End Time: ( <%=@planner.midday_nap_end_time%> ) </label><select name="baby[planners][][midday_nap_end_time]">
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="n/a">n/a</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:00pm">12:00pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:05pm">12:05pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:10pm">12:10pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:15pm">12:15pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:20pm">12:20pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:25pm">12:25pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:30pm">12:30pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:35pm">12:35pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:40pm">12:40pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:45pm">12:45pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:50pm">12:50pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="12:55pm">12:55pm</option>
-
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:00pm">1:00pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:05pm">1:05pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:10pm">1:10pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:15pm">1:15pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:20pm">1:20pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:25pm">1:25pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:30pm">1:30pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:35pm">1:35pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:40pm">1:40pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:45pm">1:45pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:50pm">1:50pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="1:55pm">1:55pm</option>
-
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:00pm">2:00pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:05pm">2:05pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:10pm">2:10pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:15pm">2:15pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:20pm">2:20pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:25pm">2:25pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:30pm">2:30pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:35pm">2:35pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:40pm">2:40pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:45pm">2:45pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:50pm">2:50pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="2:55pm">2:55pm</option>
-     <option id="midday_nap_end_time" name="baby[planners][][midday_nap_end_time]" value="3:00pm">3:00pm</option>
-    </select>
-
-    <br>
-    <br>
-
-    <label for="late_afternoon_nap_start_time">Late Afternoon Nap - Start Time: ( <%=@planner.late_afternoon_nap_start_time%> ) </label> <select name="baby[planners][][late_afternoon_nap_start_time]">
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="n/a">n/a</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:00pm">3:00pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:05pm">3:05pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:10pm">3:10pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:15pm">3:15pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:20pm">3:20pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:25pm">3:25pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:30pm">3:30pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:35pm">3:35pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:40pm">3:40pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:45pm">3:45pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:50pm">3:50pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="3:55pm">3:55pm</option>
-
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:00pm">4:00pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:05pm">4:05pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:10pm">4:10pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:15pm">4:15pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:20pm">4:20pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:25pm">4:25pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:30pm">4:30pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:35pm">4:35pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:40pm">4:40pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:45pm">4:45pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:50pm">4:50pm</option>
-      <option id="late_afternoon_nap_start_time" name="baby[planners][][late_afternoon_nap_start_time]" value="4:55pm">4:55pm</option>
-     </select>
-
-     <br>
-     <br>
-
-     <label for="late_afternoon_nap_end_time">Late Afternoon Nap - End Time: ( <%=@planner.late_afternoon_nap_end_time%> ) </label> <select name="baby[planners][][late_afternoon_nap_end_time]">
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="n/a">n/a</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="3:30pm">3:30pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="3:35pm">3:35pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="3:40pm">3:40pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="3:45pm">3:45pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="3:50pm">3:50pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="3:55pm">3:55pm</option>
-
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:00pm">4:00pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:05pm">4:05pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:10pm">4:10pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:15pm">4:15pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:20pm">4:20pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:25pm">4:25pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:30pm">4:30pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:35pm">4:35pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:40pm">4:40pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:45pm">4:45pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:50pm">4:50pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="4:55pm">4:55pm</option>
-
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="5:00pm">5:00pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="5:05pm">5:05pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="5:10pm">5:10pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="5:15pm">5:15pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="5:20pm">5:20pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="5:25pm">5:25pm</option>
-       <option id="late_afternoon_nap_end_time" name="baby[planners][][late_afternoon_nap_end_time]" value="5:30pm">5:30pm</option>
-      </select>
-
-      <br>
-      <br>
-
-     <label for="bed_time">Bed Time: ( <%=@planner.bed_time%> ) </label> <select name="baby[planners][][bed_time]">
-       <option id="bed_time" name="baby[planners][][bed_time]" value="n/a">n/a</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="5:30pm">5:30pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="5:35pm">5:35pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="5:40pm">5:40pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="5:45pm">5:45pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="5:50pm">5:50pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="5:55pm">5:55pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:00pm">6:00pm</option>
-
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:05pm">6:05pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:10pm">6:10pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:15pm">6:15pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:20pm">6:20pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:25pm">6:25pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:30pm">6:30pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:35pm">6:35pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:40pm">6:40pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:45pm">6:45pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:50pm">6:50pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="6:55pm">6:55pm</option>
-
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:00pm">7:00pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:05pm">7:05pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:10pm">7:10pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:15pm">7:15pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:20pm">7:20pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:25pm">7:25pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:30pm">7:30pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:35pm">7:35pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:40pm">7:40pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:45pm">7:45pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:50pm">7:50pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="7:55pm">7:55pm</option>
-
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:00pm">8:00pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:05pm">8:05pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:10pm">8:10pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:15pm">8:15pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:20pm">8:20pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:25pm">8:25pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:30pm">8:30pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:35pm">8:35pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:40pm">8:40pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:45pm">8:45pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:50pm">8:50pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="8:55pm">8:55pm</option>
-
-       <option id="bed_time" name="baby[planners][][bed_time]" value="9:00pm">9:00pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="9:05pm">9:05pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="9:10pm">9:10pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="9:15pm">9:15pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="9:20pm">9:20pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="9:25pm">9:25pm</option>
-       <option id="bed_time" name="baby[planners][][bed_time]" value="9:30pm">9:30pm</option>
-      </select>
-
-      <br>
+  <label for="bed_time">Bed Time:</label>
+  <input type="text" name="baby[planners][][bed_time]" id="bed_time">
+  <br>
+  <br>      <br>
       <br>
 
   <label for="notes">Notes: </label>
