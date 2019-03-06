@@ -24,9 +24,8 @@ class PlannersController < ApplicationController
 
   post '/planners' do
     if logged_in?
-
-       #WHAT IF A USER ENTERS A NEW BABY NAME AND SELECTS EXISTING NAME?
-      if params[:baby][:name] == ""
+       #if baby name field is empty and existing baby is selecting find existing baby.
+      if params[:baby][:name] == "" && params[:baby][:babys_id] != nil
         baby = Baby.find(params[:baby][:babys_id])
 
         params[:baby][:planners].each do |p|
@@ -35,8 +34,8 @@ class PlannersController < ApplicationController
           @planner.save
           redirect "/planners/#{@planner.id}"
           end
-
-     else params[:baby][:name] != ""
+       #if baby name field has data and existing baby is not selecting then create new baby.
+      elsif params[:baby][:name] != ""  && params[:baby][:babys_id] == nil
         baby = current_user.babies.build(name: params[:baby][:name])
         baby.save
 
@@ -46,11 +45,14 @@ class PlannersController < ApplicationController
           @planner.save
           redirect "/planners/#{@planner.id}"
           end
-        end
-    else
+      #if baby name field has data and existing baby is selected then redirect to new.
+     else params[:baby][:name] != ""  && params[:baby][:babys_id] != nil
+         redirect '/planners/new'
+     end
+   else
       redirect '/login'
-    end
-  end
+   end
+ end
 
 
   #show route for a planner entry.
