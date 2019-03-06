@@ -82,9 +82,23 @@ class PlannersController < ApplicationController
  end
 
   #patch planners to update a planner.
-  patch '/planners/:id' do
-  "please work"
-  end
+ #  patch '/planners/:id' do
+ #  binding.pry
+ #  if logged_in?
+ #    @planner = Planner.find_by(id: params[:id])
+ #    baby = Baby.find(params[:baby][:babys_id])
+ #    if
+ #
+ #      baby.user == current_user && params[:name] != ""
+ #      @baby.update(name: params[:name])
+ #      redirect "/babies/#{@baby.id}"
+ #    else
+ #      redirect "/babies"
+ #    end
+ #  else
+ #    redirect '/login'
+ # end
+ #  end
 
   #delete planners to delete a planner.
 
