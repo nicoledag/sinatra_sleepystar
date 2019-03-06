@@ -83,7 +83,7 @@ class PlannersController < ApplicationController
    end
  end
 
-  #patch planners to update a planner.
+ #  #patch planners to update a planner.
  #  patch '/planners/:id' do
  #  binding.pry
  #  if logged_in?

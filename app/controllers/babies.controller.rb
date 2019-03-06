@@ -38,6 +38,7 @@ class BabiesController < ApplicationController
     if logged_in?
 
       @baby = Baby.find_by(id: params[:id])
+      @planners = current_user.planners
       erb :'/babies/show_baby'
     else
       redirect '/login'
