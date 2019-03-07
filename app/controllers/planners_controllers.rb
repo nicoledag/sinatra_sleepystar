@@ -28,12 +28,18 @@ class PlannersController < ApplicationController
       if params[:baby][:name] == "" && params[:baby][:babys_id] != nil
         baby = Baby.find(params[:baby][:babys_id])
 
-        params[:baby][:planners].each do |p|
-          @planner = Planner.new(p)
-          @planner.baby = baby
-          @planner.save
+        @planner = baby.planners.build(wake_time: params[:planners][:wake_time], bed_time: params[:planners][:bed_time],
+        notes: params[:planners][:notes], morning_nap_start_time: params[:planners][:morning_nap_start_time],
+        morning_nap_end_time: params[:planners][:morning_nap_end_time], midday_nap_start_time: params[:planners][:midday_nap_start_time],
+        midday_nap_end_time: params[:planners][:midday_nap_end_time], late_afternoon_nap_start_time: params[:planners][:late_afternoon_nap_start_time],
+        late_afternoon_nap_end_time: params[:planners][:late_afternoon_nap_end_time] )
+        @planner.save
+
+        # params[:planners].each do |p|
+        #   @planner = Planner.new(p)
+        #   @planner.baby = baby
+        #   @planner.save
           redirect "/planners/#{@planner.id}"
-          end
        #if baby name field has data and existing baby is not selecting then create new baby.
       elsif params[:baby][:name] != ""  && params[:baby][:babys_id] == nil
         baby = current_user.babies.build(name: params[:baby][:name])
