@@ -36,9 +36,7 @@ class BabiesController < ApplicationController
   #show route for a baby entry.
   get '/babies/:id' do
     if logged_in?
-
       @baby = Baby.find_by(id: params[:id])
-      @planners = current_user.planners
       erb :'/babies/show_baby'
     else
       redirect '/login'
