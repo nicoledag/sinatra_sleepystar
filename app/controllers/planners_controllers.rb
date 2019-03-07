@@ -83,24 +83,30 @@ class PlannersController < ApplicationController
    end
  end
 
- #  #patch planners to update a planner.
- #  patch '/planners/:id' do
- #  binding.pry
- #  if logged_in?
- #    @planner = Planner.find_by(id: params[:id])
- #    baby = Baby.find(params[:baby][:babys_id])
- #    if
- #
- #      baby.user == current_user && params[:name] != ""
- #      @baby.update(name: params[:name])
- #      redirect "/babies/#{@baby.id}"
- #    else
- #      redirect "/babies"
- #    end
- #  else
- #    redirect '/login'
- # end
- #  end
+  #patch planners to update a planner.
+  patch '/planners/:id' do
+  binding.pry
+  if logged_in?
+    @planner = Planner.find_by(id: params[:id])
+    baby = Baby.find(params[:baby][:babys_id])
+    if baby == @planner.baby && @planner.baby.user == current_user
+
+    params[:baby][:planners].map do |k, v|
+      @planner =Planner.update(k: [:v])
+        puts "#{k}" "#{v}"
+      end
+
+        redirect "/planners/#{@planner.id}"
+        end
+
+      redirect "/planners/#{@planner.id}"
+    else
+      redirect "/planner"
+    end
+  else
+    redirect '/login'
+ end
+  end
 
   #delete planners to delete a planner.
 
