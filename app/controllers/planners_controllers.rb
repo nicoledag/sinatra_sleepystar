@@ -107,5 +107,18 @@ class PlannersController < ApplicationController
   end
 
   #delete planners to delete a planner.
+  delete '/planners/:id' do
+    if logged_in?
+       @planner = Planner.find_by(id: params[:id])
+        if @planner.baby.user == current_user
+          @planner.destroy
+          redirect '/planners'
+        else
+          redirect '/planners'
+        end
+     else
+       redirect '/login'
+     end
+  end
 
 end
