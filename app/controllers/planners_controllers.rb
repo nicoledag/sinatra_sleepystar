@@ -90,13 +90,9 @@ class PlannersController < ApplicationController
   #patch planners to update a planner.
   patch '/planners/:id' do
     if logged_in?
-      binding.pry
-      #if user selects existing baby, find baby and update planner.
       @planner = Planner.find_by(id: params[:id])
-      baby = Baby.find(params[:baby][:babys_id])
-        if baby == @planner.baby && @planner.baby.user == current_user && params[:baby][:name] == nil && params[:baby][:babys_id] != nil
+        if @planner.baby.user == current_user
 
-          # baby.update(name: params[:baby][:name)
           @planner.update(wake_time: params[:planners][:wake_time], bed_time: params[:planners][:bed_time],
           notes: params[:planners][:notes], morning_nap_start_time: params[:planners][:morning_nap_start_time],
           morning_nap_end_time: params[:planners][:morning_nap_end_time], midday_nap_start_time: params[:planners][:midday_nap_start_time],

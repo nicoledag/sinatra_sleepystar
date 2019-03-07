@@ -1,17 +1,19 @@
-<h2>Edit a Sleep Planner</h2>
+<h2>Edit Sleep Planner</h2>
 <br>
 
 <form action="/planners/<%=@planner.id%>" method="post">
 <input id="hidden" type="hidden" name="_method" value="patch">
 
+<h3>Baby: <%=@planner.baby.name%></h3>
+<h3>Date: <%=@planner.created_at.strftime("%m-%d-%Y")%></h3>
 
-  <h3>Choose Baby:</h3>
 
-  <%@babies.each do |b|%>
+  <!-- <h3>Choose Baby:</h3> -->
+  <!-- <%@babies.each do |b|%>
   <label><%=b.name%></label>
   <input type="checkbox" name="[baby][babys_id]" value="<%=b.id%>" id="baby_<%=b.id%>" <%='checked' if @planner.baby.id == b.id %>>
   <br>
-  <%end%>
+  <%end%> -->
 
   <br>
 
@@ -59,7 +61,7 @@
   <br>
 
   <label for="notes">Notes: </label>
-  <textarea name="[planners][notes]" id="notes"  rows="10" cols="100"> <%=@planner.notes%> </textarea>
+  <textarea name="[planners][notes]" id="notes"  rows="10" cols="80"> <%=@planner.notes%> </textarea>
 
 
 
