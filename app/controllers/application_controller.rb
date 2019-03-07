@@ -8,7 +8,6 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "baby_sleep_planner"  #creates session ID for particular session.  Extra layer of security.
-    register Sinatra::Flash
   end
 
   get "/" do

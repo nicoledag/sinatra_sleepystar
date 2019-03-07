@@ -28,3 +28,29 @@
   <h3>Notes: <%=p.notes%></h3>
   <br>
 <%end%>
+
+<br>
+<br>
+<br>
+
+<%@baby.planners.each do |p| %>
+<a href="/planners/<%=p.id%>">
+  <h3>Date: <%=p.created_at.strftime("%m-%d-%Y")%></h3></a>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Start Time</th>
+    <th>Finish Time</th>
+    <th>Total Time</th>
+  </tr>
+  <tr>
+    <th>Wake Time:</th>
+    <td><%=p.wake_time%></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+</table>
+
+<%end%>
