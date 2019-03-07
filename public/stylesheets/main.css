@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -51,12 +52,12 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-image: url("/images/SLEEPYSTAR-BACKGROUND3.jpg");
+    background-image: url("/images/SLEEPYSTAR-BACKGROUND4.jpg");
     background-position: center; /* Center the image */
     background-repeat: repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
     color: #333;
-    font-family: Sans-Serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 18px;
   }
 
@@ -88,7 +89,7 @@
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 36px;
   }
 
@@ -114,7 +115,7 @@
   }
 
   .sidebar ul {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .branding {
