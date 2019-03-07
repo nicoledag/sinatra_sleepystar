@@ -91,16 +91,18 @@ class PlannersController < ApplicationController
   patch '/planners/:id' do
   binding.pry
   if logged_in?
+    #if user selects existing baby.
     @planner = Planner.find_by(id: params[:id])
     baby = Baby.find(params[:baby][:babys_id])
-    if baby == @planner.baby && @planner.baby.user == current_user
+      if baby == @planner.baby && @planner.baby.user == current_user
+  
+        @planner.update(wake_time: params[:planners][:wake_time], bed_time: params[:planners][:bed_time],
+        notes: params[:planners][:notes], morning_nap_start_time: params[:planners][:morning_nap_start_time],
+        morning_nap_end_time: params[:planners][:morning_nap_end_time], midday_nap_start_time: params[:planners][:midday_nap_start_time],
+        midday_nap_end_time: params[:planners][:midday_nap_end_time], late_afternoon_nap_start_time: params[:planners][:late_afternoon_nap_start_time],
+        late_afternoon_nap_end_time: params[:planners][:late_afternoon_nap_end_time] )
 
-      # params[:baby][:planners].each do |k, v|
-      #   @planner =Planner.update(v)
-      #   puts "#{k}" "#{v}"
-      # end
-
-      redirect "/planners/#{@planner.id}"
+        redirect "/planners/#{@planner.id}"
     else
       redirect "/planner"
     end
