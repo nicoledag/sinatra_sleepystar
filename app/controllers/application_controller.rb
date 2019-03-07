@@ -1,4 +1,5 @@
 require './config/environment'
+require 'sinatra/flash'
 
 class ApplicationController < Sinatra::Base
 
@@ -6,8 +7,8 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "password_security"  #creates session ID for particular session.  Extra layer of security.
-
+    set :session_secret, "baby_sleep_planner"  #creates session ID for particular session.  Extra layer of security.
+    register Sinatra::Flash
   end
 
   get "/" do

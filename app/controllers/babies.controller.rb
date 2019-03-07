@@ -89,5 +89,3 @@ class BabiesController < ApplicationController
 
 
 end
-
-#NEED TO LOOK AT EDIT AND DELETE METHODS
