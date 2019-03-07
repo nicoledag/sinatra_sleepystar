@@ -91,13 +91,10 @@ class PlannersController < ApplicationController
     baby = Baby.find(params[:baby][:babys_id])
     if baby == @planner.baby && @planner.baby.user == current_user
 
-    params[:baby][:planners].map do |k, v|
-      @planner =Planner.update(k: [:v])
-        puts "#{k}" "#{v}"
-      end
-
-        redirect "/planners/#{@planner.id}"
-        end
+      # params[:baby][:planners].each do |k, v|
+      #   @planner =Planner.update(v)
+      #   puts "#{k}" "#{v}"
+      # end
 
       redirect "/planners/#{@planner.id}"
     else
