@@ -24,7 +24,7 @@ class PlannersController < ApplicationController
 
   post '/planners' do
     if logged_in?
-       #if baby name field is empty and existing baby is selecting find existing baby.
+       #if baby name field is empty and existing baby is selecting find existing baby, create planner and associate with baby.
       if params[:baby][:name] == "" && params[:baby][:babys_id] != nil
         baby = Baby.find(params[:baby][:babys_id])
 
@@ -34,23 +34,21 @@ class PlannersController < ApplicationController
         midday_nap_end_time: params[:planners][:midday_nap_end_time], late_afternoon_nap_start_time: params[:planners][:late_afternoon_nap_start_time],
         late_afternoon_nap_end_time: params[:planners][:late_afternoon_nap_end_time] )
         @planner.save
+        redirect "/planners/#{@planner.id}"
 
-        # params[:planners].each do |p|
-        #   @planner = Planner.new(p)
-        #   @planner.baby = baby
-        #   @planner.save
-          redirect "/planners/#{@planner.id}"
-       #if baby name field has data and existing baby is not selecting then create new baby.
+       #if baby name field has data and existing baby is not selecting then create new baby, new planner and associate new baby with planner.
       elsif params[:baby][:name] != ""  && params[:baby][:babys_id] == nil
         baby = current_user.babies.build(name: params[:baby][:name])
         baby.save
 
-        params[:baby][:planners].each do |p|
-          @planner = Planner.new(p)
-          @planner.baby = baby
-          @planner.save
-          redirect "/planners/#{@planner.id}"
-          end
+        @planner = baby.planners.build(wake_time: params[:planners][:wake_time], bed_time: params[:planners][:bed_time],
+        notes: params[:planners][:notes], morning_nap_start_time: params[:planners][:morning_nap_start_time],
+        morning_nap_end_time: params[:planners][:morning_nap_end_time], midday_nap_start_time: params[:planners][:midday_nap_start_time],
+        midday_nap_end_time: params[:planners][:midday_nap_end_time], late_afternoon_nap_start_time: params[:planners][:late_afternoon_nap_start_time],
+        late_afternoon_nap_end_time: params[:planners][:late_afternoon_nap_end_time] )
+        @planner.save
+        redirect "/planners/#{@planner.id}"
+
       #if baby name field has data and existing baby is selected then redirect to new.
      else params[:baby][:name] != ""  && params[:baby][:babys_id] != nil
          redirect '/planners/new'
