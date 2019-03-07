@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       new_user = User.create(params)
 		  session[:user_id] = new_user.id
 
-      flash[:error] = "You have successfully signed up."
+      flash[:warning] = "You have successfully signed up."
       redirect '/planners'
 	  else
       flash[:error] = "You did not enter all criteria to sign up."
