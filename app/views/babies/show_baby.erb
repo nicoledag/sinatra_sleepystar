@@ -1,6 +1,5 @@
-<a href="/babies/<%=@baby.id%>/edit">Edit Baby</a>
-
 <h3>Baby: <%=@baby.name%></h3>
+<a href="/babies/<%=@baby.id%>/edit">Edit Baby's Name Here</a>
 
 <br>
 <br>
@@ -10,6 +9,9 @@
 <input type="submit" value="Delete Baby">
 </form>
 
+<br>
+
+<h3><%=@baby.name%>'s Planners:</h3>
 <%@baby.planners.each do |p| %>
 <a href="/planners/<%=p.id%>">
   <br>
