@@ -5,14 +5,7 @@
 <input id="hidden" type="hidden" name="_method" value="patch">
 
 
-  <h3>Add Baby:</h3>
-  <label for="name">Baby's Name: </label>
-  <input type="text" name="baby[name]" id="name" value="">
-
-  <br>
-  <br>
-
-  <h3>or choose from existing Baby:</h3>
+  <h3>Choose Baby:</h3>
 
   <%@babies.each do |b|%>
   <label><%=b.name%></label>
