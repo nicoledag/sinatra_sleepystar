@@ -3,16 +3,50 @@
 
 <%@planners.each do |p| %>
 <a href="/planners/<%=p.id%>">
-  <br>
   <h3>Baby: <%=p.baby.name%></h3></a>
   <h3>Date: <%=p.created_at.strftime("%m-%d-%Y")%></h3>
-  <h3>Wake Time: <%=p.wake_time%></h3>
-  <h3>Morning Nap - Start Time: <%=p.morning_nap_start_time%></h3>
-  <h3>Morning Nap - End Time: <%=p.morning_nap_end_time%></h3>
-  <h3>Midday Nap - Start Time: <%=p.midday_nap_start_time%></h3>
-  <h3>Midday Nap - End Time: <%=p.midday_nap_end_time%></h3>
-  <h3>Late Afternoon Nap - Start Time: <%=p.late_afternoon_nap_start_time%></h3>
-  <h3>Late Afternoon Nap - End Time: <%=p.late_afternoon_nap_end_time%></h3>
-  <h3>Bed Time: <%=p.bed_time%></h3>
-  <h3>Notes: <%=p.notes%></h3>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Start Time</th>
+    <th>Finish Time</th>
+    <th>Total Time</th>
+  </tr>
+  <tr>
+    <th>Wake Time:</th>
+    <td><%=p.wake_time%></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Morning Nap:</th>
+    <td><%=p.morning_nap_start_time%></td>
+    <td><%=p.morning_nap_end_time%></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Midday Nap:</th>
+    <td><%=p.midday_nap_start_time%></td>
+    <td><%=p.midday_nap_end_time%></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Late Afternoon Nap:</th>
+    <td><%=p.late_afternoon_nap_start_time%></td>
+    <td><%=p.late_afternoon_nap_end_time%></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Bed Time:</th>
+    <td><%=p.bed_time%></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<br>
+<h4>Notes: <%=p.notes%></h4>
+
+<br>
 <%end%>
