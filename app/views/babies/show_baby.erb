@@ -12,7 +12,7 @@
 <br>
 <br>
 
-<%@baby.planners.each do |p| %>
+<%@baby.planners.order(created_at: :desc).each do |p| %>
 <a href="/planners/<%=p.id%>">
   <h3>Date: <%=p.created_at.strftime("%m-%d-%Y")%></h3></a>
 
