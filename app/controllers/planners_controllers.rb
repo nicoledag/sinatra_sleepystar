@@ -64,7 +64,7 @@ class PlannersController < ApplicationController
   #show route for a planner entry.
   get '/planners/:id' do
     if logged_in?
-      @planner = Planner.find_by(id: params[:id])
+      find_planner_by_params_id
 
       erb :'/planners/show_planner'
     else
@@ -78,9 +78,9 @@ class PlannersController < ApplicationController
   get '/planners/:id/edit' do
 
    if logged_in?
-     @planner = Planner.find_by(id: params[:id])
+     find_planner_by_params_id
      @babies = current_user.babies
-     if @planner.baby.user == current_user
+     if planner_baby_user_equals_current_user
        erb :'/planners/edit'
      else
        redirect '/planners'
@@ -92,8 +92,8 @@ class PlannersController < ApplicationController
   #patch planners to update a planner.
   patch '/planners/:id' do
     if logged_in?
-      @planner = Planner.find_by(id: params[:id])
-        if @planner.baby.user == current_user
+      find_planner_by_params_id
+        if planner_baby_user_equals_current_user
 
           @planner.update(wake_time: params[:planners][:wake_time], bed_time: params[:planners][:bed_time],
           notes: params[:planners][:notes], morning_nap_start_time: params[:planners][:morning_nap_start_time],
@@ -111,8 +111,8 @@ class PlannersController < ApplicationController
   #delete planners to delete a planner.
   delete '/planners/:id' do
     if logged_in?
-       @planner = Planner.find_by(id: params[:id])
-        if @planner.baby.user == current_user
+       find_planner_by_params_id
+        if planner_baby_user_equals_current_user
           @planner.destroy
           flash[:message] = "Planner has been deleted."
           redirect '/planners'
@@ -122,6 +122,16 @@ class PlannersController < ApplicationController
      else
        redirect '/login'
      end
+  end
+
+  private
+
+  def find_planner_by_params_id
+    @planner = Planner.find_by(id: params[:id])
+  end
+
+  def planner_baby_user_equals_current_user
+    @planner.baby.user == current_user
   end
 
 end
