@@ -27,6 +27,7 @@ class BabiesController < ApplicationController
       redirect "/babies/#{@baby.id}"
 
     elsif logged_in? && params[:name] == ""
+      flash[:message] = "The name field was left blank, please try again"
       redirect 'babies/new'
     else
       redirect '/login'
@@ -78,6 +79,7 @@ class BabiesController < ApplicationController
       @baby = Baby.find_by(id: params[:id])
        if @baby.user == current_user
          @baby.destroy
+         flash[:message] = "Baby has been deleted."
          redirect '/babies'
        else
          redirect '/babies'

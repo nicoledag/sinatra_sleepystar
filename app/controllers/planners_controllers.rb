@@ -52,6 +52,7 @@ class PlannersController < ApplicationController
 
       #if baby name field has data and existing baby is selected then redirect to new.
      else params[:baby][:name] != ""  && params[:baby][:babys_id] != nil
+         flash[:message] = "No data was entered, please try again"
          redirect '/planners/new'
      end
    else
@@ -113,6 +114,7 @@ class PlannersController < ApplicationController
        @planner = Planner.find_by(id: params[:id])
         if @planner.baby.user == current_user
           @planner.destroy
+          flash[:message] = "Planner has been deleted."
           redirect '/planners'
         else
           redirect '/planners'
