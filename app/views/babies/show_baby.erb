@@ -16,39 +16,39 @@
 <a href="/planners/<%=p.id%>">
   <h3>Date: <%=p.created_at.strftime("%m-%d-%Y")%></h3></a>
 
-<table>
+<table id="t01">
   <tr>
-    <th></th>
-    <th>Start Time</th>
-    <th>Finish Time</th>
-    <th>Total Time</th>
+    <th class="yellow"></th>
+    <th class="yellow">Start Time</th>
+    <th class="yellow">Finish Time</th>
+    <th class="yellow">Total Time</th>
   </tr>
   <tr>
-    <th>Wake Time:</th>
+    <th class="blue">Wake Time:</th>
     <td><%=p.wake_time%></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <th>Morning Nap:</th>
+    <th class="blue">Morning Nap:</th>
     <td><%=p.morning_nap_start_time%></td>
     <td><%=p.morning_nap_end_time%></td>
     <td></td>
   </tr>
   <tr>
-    <th>Midday Nap:</th>
+    <th class="blue">Midday Nap:</th>
     <td><%=p.midday_nap_start_time%></td>
     <td><%=p.midday_nap_end_time%></td>
     <td></td>
   </tr>
   <tr>
-    <th>Late Afternoon Nap:</th>
+    <th class="blue">Late Afternoon Nap:</th>
     <td><%=p.late_afternoon_nap_start_time%></td>
     <td><%=p.late_afternoon_nap_end_time%></td>
     <td></td>
   </tr>
   <tr>
-    <th>Bed Time:</th>
+    <th class="blue">Bed Time:</th>
     <td><%=p.bed_time%></td>
     <td></td>
     <td></td>

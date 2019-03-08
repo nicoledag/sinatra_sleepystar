@@ -1,6 +1,40 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
 
+/* --- Navigation --- */
 
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+  background-color: #072d7e;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
 
 @media screen {
   /* --- Reset Styles --- */
@@ -92,11 +126,11 @@
     margin-top: 20px;
     padding-top: 20px;
   }
-  
-  a:link {text-decoration: none;}
+
+  /*a:link {text-decoration: none;}
   a:link {color:black;}
   a:visited {color:purple;}
-  a:hover {color:blue;}
+  a:hover {color:blue;}*/
 
 
   /* --- Table --- */
@@ -106,50 +140,24 @@
     border-collapse: collapse;
   }
   th, td {
-    padding: 5px;
+    padding: 10px;
     text-align: left;
   }
 
-  .note {
-
-  }
-
-  /* --- Table --- */
-  /* Add a black background color to the top navigation */
-  .topnav {
-    background-color: #333;
-    overflow: hidden;
-  }
-
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
+  table#t01 .yellow {
+    background-color: yellow;
     color: black;
   }
 
-  /* Add an active class to highlight the current page */
-  .active {
-    background-color: navy;
+  table#t01 .blue {
+    background-color: #072d7e;
     color: white;
   }
 
-  /* Hide the link that should open and close the topnav on small screens */
-  .topnav .icon {
-    display: none;
-  }
+
 
 }
+
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
