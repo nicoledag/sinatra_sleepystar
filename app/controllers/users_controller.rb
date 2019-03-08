@@ -9,29 +9,27 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    binding.pry
     #prevents some from signing up twice with the same username.
     user = User.find_by(:email => params[:email])
 
     if user != nil
-      flash[:error] = "The user already exists."
+      flash[:message] = "The user entered already exists.  Please try logging in"
       redirect '/login'
     elsif
       user == nil && params[:username] != "" && params[:email] != "" && params[:password] != ""
       new_user = User.create(params)
 		  session[:user_id] = new_user.id
 
-      flash[:warning] = "You have successfully signed up."
+      flash[:message] = "You have successfully signed up."
       redirect '/planners'
 	  else
-      flash[:error] = "You did not enter all criteria to sign up."
+      flash[:message] = "You did not enter all the criteria needed to sign up."
 		  redirect '/signup'
 		end
   end
 
   get '/login' do
     if logged_in?
-      # flash[:error] = "You have successfully logged in."
       redirect '/planners'
     else
       erb :"users/login"
