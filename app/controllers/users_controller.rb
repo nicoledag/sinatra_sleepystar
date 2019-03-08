@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   get '/login' do
     if logged_in?
-      flash[:error] = "You have successfully logged in."
+      # flash[:error] = "You have successfully logged in."
       redirect '/planners'
     else
       erb :"users/login"
