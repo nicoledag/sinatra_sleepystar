@@ -10,6 +10,7 @@ class BabiesController < ApplicationController
     end
   end
 
+
   # get babies/new to render a form to create a new entry.
   get '/babies/new' do
     if logged_in?
