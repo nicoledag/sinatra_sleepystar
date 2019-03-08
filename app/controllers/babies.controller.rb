@@ -37,7 +37,7 @@ class BabiesController < ApplicationController
   #show route for a baby entry.
   get '/babies/:id' do
     if logged_in?
-      @baby = Baby.find_by(id: params[:id])
+      find_baby_by_params_id
       erb :'/babies/show_baby'
     else
       redirect '/login'
@@ -48,7 +48,7 @@ class BabiesController < ApplicationController
   #get babies/:id/edit to render form to edit a baby.
   get '/babies/:id/edit' do
    if logged_in?
-     @baby = Baby.find_by(id: params[:id])
+     find_baby_by_params_id
      if @baby.user == current_user
        erb :'/babies/edit'
      else
@@ -61,7 +61,7 @@ class BabiesController < ApplicationController
  #patch babies to update a baby.
   patch '/babies/:id' do
     if logged_in?
-      @baby = Baby.find_by(id: params[:id])
+      find_baby_by_params_id
       if @baby.user == current_user && params[:name] != ""
         @baby.update(name: params[:name])
         redirect "/babies/#{@baby.id}"
@@ -76,7 +76,7 @@ class BabiesController < ApplicationController
  #delete babies to delete a baby.
  delete '/babies/:id' do
    if logged_in?
-      @baby = Baby.find_by(id: params[:id])
+      find_baby_by_params_id
        if @baby.user == current_user
          @baby.destroy
          flash[:message] = "Baby has been deleted."
@@ -87,6 +87,12 @@ class BabiesController < ApplicationController
     else
       redirect '/login'
     end
+ end
+
+ private
+
+ def find_baby_by_params_id
+   @baby = Baby.find_by(id: params[:id])
  end
 
 

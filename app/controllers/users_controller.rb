@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   get '/login' do
     if logged_in?
-      redirect '/planners'
+      redirect '/babies'
     else
       erb :"users/login"
     end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     if user && user.authenticate(params[:password]) && user.username != ""
       session[:user_id] = user.id
 
-      redirect "planners"
+      redirect "babies"
     else
       redirect '/login'
     end
