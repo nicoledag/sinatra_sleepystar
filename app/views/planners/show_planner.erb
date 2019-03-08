@@ -1,39 +1,39 @@
 <h3>Baby: <%=@planner.baby.name%></h3>
 <h3>Date: <%=@planner.created_at.strftime("%m-%d-%Y")%></h3>
 <br>
-<table>
+<table id="t01">
   <tr>
-    <th></th>
-    <th>Start Time</th>
-    <th>Finish Time</th>
-    <th>Total Time</th>
+    <th class="yellow"></th>
+    <th class="yellow">Start Time</th>
+    <th class="yellow">Finish Time</th>
+    <th class="yellow">Total Time</th>
   </tr>
   <tr>
-    <th>Wake Time:</th>
+    <th class="blue">Wake Time:</th>
     <td><%=@planner.wake_time%></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <th>Morning Nap:</th>
+    <th class="blue">Morning Nap:</th>
     <td><%=@planner.morning_nap_start_time%></td>
     <td><%=@planner.morning_nap_end_time%></td>
     <td></td>
   </tr>
   <tr>
-    <th>Midday Nap:</th>
+    <th class="blue">Midday Nap:</th>
     <td><%=@planner.midday_nap_start_time%></td>
     <td><%=@planner.midday_nap_end_time%></td>
     <td></td>
   </tr>
   <tr>
-    <th>Late Afternoon Nap:</th>
+    <th class="blue">Late Afternoon Nap:</th>
     <td><%=@planner.late_afternoon_nap_start_time%></td>
     <td><%=@planner.late_afternoon_nap_end_time%></td>
     <td></td>
   </tr>
   <tr>
-    <th>Bed Time:</th>
+    <th class="blue">Bed Time:</th>
     <td><%=@planner.bed_time%></td>
     <td></td>
     <td></td>
