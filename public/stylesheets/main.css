@@ -138,7 +138,7 @@
   /* --- Flash --- */
 
   .message {
-  
+
 }
 
 
@@ -163,6 +163,9 @@
     color: white;
   }
 
+  table#t01 .center {
+    text-align: center;
+  }
 
 
 }
