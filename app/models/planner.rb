@@ -6,12 +6,18 @@ class Planner < ActiveRecord::Base
   #planner.babies
 
 
-  def convert_times_to_24_hours
+  # def convert_times_to_24_hours
+  #
+  #   hour = "10:30".split(/:\w\w/)
+  #   hour[0].to_i
+  #
+  #   minute = "10:30".split(/\w\w:/)
 
-    hour = "10:30".split(/:\w\w/)
-    minute = "10:30".split(/\w\w:/)
+  #   "9:05am".split(":")
 
-  end
+  #   m = min.chop
+  #
+  # end
 
   # Convert both times to 24 hour format, adding 12 to all pm hours
   # 9:07am becomes 9:07 hours (start time)
