@@ -1,5 +1,8 @@
 <h2><%=current_user.username.capitalize%>'s Babies </h2>
 
+<h3>Select baby to view planners.</h3>
+<br>
+
 <%@babies.each do |baby| %>
 <h3><a href="/babies/<%=baby.id%>">
   <p><%=baby.name%></p>

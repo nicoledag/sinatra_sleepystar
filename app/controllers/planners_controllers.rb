@@ -4,7 +4,6 @@ class PlannersController < ApplicationController
   get '/planners' do
     if logged_in?
       @planners = current_user.planners.order(created_at: :desc)
-      # @planners.sort { |a,b| a.created_at <=> b.created_at }
       erb :'planners/planners'
     else
      redirect '/login'
