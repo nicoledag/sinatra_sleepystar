@@ -8,6 +8,7 @@ Install Instructions
 
 git clone git@github.com:nicoledag/sinatra_sleepystar.git
 cd sinatra_sleepystar
+gem install bundler:2.0.1
 bundle install
 rake db:migrate
 
