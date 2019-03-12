@@ -12,13 +12,13 @@
 <br>
 <br>
 
-<h3>Click on date to edit planner.</h3>
-<br>
+
 <%@baby.planners.order(created_at: :desc).each do |p| %>
-<a href="/planners/<%=p.id%>">
+
   <h3>Date: <%=p.created_at.strftime("%m-%d-%Y")%></h3></a>
   <h4>Notes: <%=p.notes%></h4>
   <br>
+  <a href="/planners/<%=p.id%>">Edit Planner Here</a>
 
 <table id="t01">
   <tr>
