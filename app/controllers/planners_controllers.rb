@@ -1,5 +1,6 @@
 class PlannersController < ApplicationController
 
+
 #index route for all planner entries.
   get '/planners' do
     if logged_in?

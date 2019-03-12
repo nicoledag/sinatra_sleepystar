@@ -6,41 +6,169 @@ class Planner < ActiveRecord::Base
   #planner.babies
 
 
-  # def convert_times_to_24_hours
-  #
-  #   hour = "10:30".split(/:\w\w/)
-  #   hour[0].to_i
-  #
-  #   minute = "10:30".split(/\w\w:/)
+      @nap_start_julie = "10:00am"
+    #  "9am", "10:30am", 12:00pm
 
-  #   "9:05am".split(":")
+        @nap_end_julie = "12:00pm"
+    #  "9am", "10:30am", 12:00pm
 
-  #   m = min.chop
-  #
-  # end
 
-  # Convert both times to 24 hour format, adding 12 to all pm hours
-  # 9:07am becomes 9:07 hours (start time)
-  # 3:42pm becomes 15:42 hours (end time)
-  # If the start minutes are greater than the end minutes…
-  # Subtract 1 hour from the end time hours – not applicable to this example
-  # Add 60 minutes to the end minutes – not applicable to this example
-  # Subtract end time minutes from start time minutes…
-  # 42 – 07 = 35 minutes
-  # Subtract the hours…
-  # 9 – 3 = 6 hours
-  # Put(not add) the hours and minutes together – 6:45 (6 hours and 45 minutes)
-  # Here is an example where the start minutes are greater than the end minutes – 8:55am to 3:42pm
-  # Convert both times to 24 hour format, adding 12 to any pm hours
-  # 8:55am becomes 8:55 hours (start time)
-  # 3:42pm becomes 15:42 hours (end time) <- 12 added
-  # If the start minutes are greater than the end minutes…
-  # Subtract 1 hour from the end time hours – 15:42 becomes 14:42
-  # Add 60 minutes to the end minutes – 14:42 becomes 14:102
-  # Subtract end time minutes from start time minutes…
-  # 102 – 55 = 47 minutes
-  # Subtract the hours…
-  # 14 - 8 = 6 hours
-  # Put(not add) the hours and minutes together – 6:45 (6 hours and 45 minutes)
+      def start_time_hour
+      if @nap_start_julie.include?(":") && @nap_start_julie.include?("pm")
+         hour = @nap_start_julie.split(":")
+         new_hour = hour[0].to_f
+         cal_hour = new_hour + 12
+         elsif
+         @nap_start_julie.include?(":") && @nap_start_julie.include?("am")
+         hour = @nap_start_julie.split(":")
+         new_hour = hour[0].to_f
+
+      else
+          if @nap_start_julie.include?("am")
+            hour = @nap_start_julie.chomp("am")
+            f_hour = hour.to_f
+          elsif @nap_start_julie.include?("pm")
+            hour = @nap_start_julie.chomp("pm")
+            new_hour = hour.to_f
+            cal_hour = new_hour + 12
+          end
+      end
+
+      end
+
+
+
+      def start_time_minutes
+        if @nap_start_julie.include?(":")
+          minute = @nap_start_julie.split(":")
+            if minute.include?("am")
+              minute = minute[1].chomp("am")
+              new_min = minute.to_f
+            else minute.include?("pm")
+              minute = minute[1].chomp("pm")
+              new_min = minute.to_f
+            end
+
+        else
+              minute = 0.0
+        end
+
+      end
+
+
+
+  def end_time_hour
+      if @nap_end_julie.include?(":") && @nap_end_julie.include?("pm")
+         hour = @nap_end_julie.split(":")
+         new_hour = hour[0].to_f
+         cal_hour = new_hour + 12
+         elsif
+         @nap_end_julie.include?(":") && @nap_end_julie.include?("am")
+         hour = @nap_end_julie.split(":")
+         new_hour = hour[0].to_f
+
+      else
+          if @nap_end_julie.include?("am")
+            hour = @nap_end_julie.chomp("am")
+            f_hour = hour.to_f
+          elsif @nap_end_julie.include?("pm")
+            hour = @nap_end_julie.chomp("pm")
+            new_hour = hour.to_f
+            cal_hour = new_hour + 12
+          end
+      end
+
+      end
+
+
+      def end_time_minutes
+
+        if @nap_end_julie.include?(":")
+          minute = @nap_end_julie.split(":")
+            if minute.include?("am")
+              minute = minute[1].chomp("am")
+              new_min = minute.to_f
+            else minute.include?("pm")
+              minute = minute[1].chomp("pm")
+              new_min = minute.to_f
+            end
+
+        else
+              minute = 0.0
+        end
+
+      end
+
+
+    def time_difference
+
+  puts "#{@nap_start_julie}"
+  puts "#{@nap_end_julie}"
+
+
+    puts "Start Time Hour: #{start_time_hour}"
+    puts "Start Time Minutes: #{start_time_minutes}"
+    puts "End Time Hour: #{end_time_hour}"
+    puts "End Time Minutes: #{end_time_minutes}"
+
+
+      if start_time_hour == 24 && start_time_minutes > end_time_minutes
+
+        cal_end_time_minutes = end_time_minutes + 60
+        minutes = cal_end_time_minutes - start_time_minutes
+
+        new_hour = end_time_hour - 13
+
+
+      elsif end_time_hour == 24 && start_time_minutes > end_time_minutes
+
+        cal_end_time_minutes = end_time_minutes + 60
+        minutes = cal_end_time_minutes - start_time_minutes
+
+        new_end_time_hour = end_time_hour - 13
+
+        new_hour = new_end_time_hour - start_time_hour
+
+        elsif end_time_hour != 24 && start_time_minutes > end_time_minutes
+        cal_end_time_minutes = end_time_minutes + 60
+        minutes = cal_end_time_minutes - start_time_minutes
+        new_end_time_hour = end_time_hour - 1
+
+        new_hour = new_end_time_hour - start_time_hour
+
+        elsif start_time_hour != 24 && start_time_minutes < end_time_minutes
+        new_hour = end_time_hour - start_time_hour
+        minutes = end_time_minutes - start_time_minutes
+
+        elsif start_time_hour == 24 && start_time_minutes < end_time_minutes
+          new_start_hour = start_time_hour - 12
+          new_hour = end_time_hour - new_start_hour
+
+          minutes = end_time_minutes - start_time_minutes
+
+        elsif start_time_hour != 24 && start_time_minutes == end_time_minutes && end_time_hour != 24
+          new_hour = end_time_hour - start_time_hour
+          minutes = 0
+
+        elsif start_time_hour == 24 && start_time_minutes == end_time_minutes
+          new_start_hour = start_time_hour - 12
+          new_hour = end_time_hour - new_start_hour
+          minutes = 0
+
+          else end_time_hour == 24 && start_time_minutes == end_time_minutes
+          new_end_hour = end_time_hour - 12
+          new_hour = new_end_hour - start_time_hour
+          minutes = 0
+        end
+
+
+
+        puts "#{new_hour}"
+        puts "#{minutes}"
+
+
+
+    end
+
 
 end
