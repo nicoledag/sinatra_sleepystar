@@ -1,8 +1,14 @@
+<a href="/babies/<%=@planner.baby.id%>">See all of <%=@planner.baby.name%>'s planners </a>
+<br>
+<br>
+<br>
+
 <h3>Baby: <%=@planner.baby.name%></h3>
 <h3>Date: <%=@planner.created_at.strftime("%m-%d-%Y")%></h3>
-<br>
 <h4>Notes: <%=@planner.notes%></h4>
 <br>
+<a href="/planners/<%=@planner.id%>/edit">Edit Planner</a>
+
 <table id="t01">
   <tr>
     <th class="yellow"></th>
@@ -41,12 +47,6 @@
     <td></td>
   </tr>
 </table>
-
-<br>
-<a href="/planners/<%=@planner.id%>/edit">Edit Planner</a>
-<br>
-<br>
-<a href="/babies/<%=@planner.baby.id%>">See all of <%=@planner.baby.name%>'s planners </a>
 
 <br>
 <br>
