@@ -28,7 +28,7 @@ Trademark:  2014 Sleepy Star
 
 
 
-Technology Used:  Object Oriented Ruby programming language, Session and Bcrpt for secure session, Active Record for database managment, HTML and CSS for styling, Photoshop for logo and background image
+Technology Used:  Object Oriented Ruby programming language, Session and Bcrypt for secure session, Active Record for database managment, HTML and CSS for styling, Photoshop for logo and background image
 
 
 
