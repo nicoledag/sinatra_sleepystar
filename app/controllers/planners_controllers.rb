@@ -52,7 +52,7 @@ class PlannersController < ApplicationController
 
       #if baby name field has data and existing baby is selected then redirect to new.
      else params[:baby][:name] != ""  && params[:baby][:babys_id] != nil
-         flash[:message] = "No data was entered, please try again"
+         flash[:message] = "More than one baby was selected, please try again"
          redirect '/planners/new'
      end
    else
