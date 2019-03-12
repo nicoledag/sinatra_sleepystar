@@ -1,6 +1,10 @@
 <a href="/babies/<%=@planner.baby.id%>">See all of <%=@planner.baby.name%>'s planners </a>
 <br>
 <br>
+<form method="post" action="/planners/<%=@planner.id%>">
+<input id="hidden" type="hidden" name="_method" value="delete">
+<input type="submit" value="Delete Planner">
+</form>
 <br>
 
 <h3>Baby: <%=@planner.baby.name%></h3>
@@ -56,8 +60,3 @@
 
 <br>
 <br>
-
-<form method="post" action="/planners/<%=@planner.id%>">
-<input id="hidden" type="hidden" name="_method" value="delete">
-<input type="submit" value="Delete Planner">
-</form>

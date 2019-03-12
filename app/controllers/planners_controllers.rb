@@ -83,7 +83,7 @@ class PlannersController < ApplicationController
      if planner_baby_user_equals_current_user
        erb :'/planners/edit'
      else
-       redirect '/planners'
+       redirect '/babies'
      end
    else redirect '/login'
    end
@@ -116,9 +116,9 @@ class PlannersController < ApplicationController
         if planner_baby_user_equals_current_user
           @planner.destroy
           flash[:message] = "Planner has been deleted."
-          redirect '/planners'
+          redirect '/babies'
         else
-          redirect '/planners'
+          redirect '/babies'
         end
      else
        redirect '/login'
