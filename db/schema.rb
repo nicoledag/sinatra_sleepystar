@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190312032437) do
+ActiveRecord::Schema.define(version: 20190312151810) do
 
   create_table "babies", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20190312032437) do
     t.string   "morning_nap_total_time"
     t.string   "midday_nap_total_time"
     t.string   "late_afternoon_nap_total_time"
+    t.string   "total_nap_time"
   end
 
   create_table "users", force: :cascade do |t|
