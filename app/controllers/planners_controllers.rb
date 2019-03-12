@@ -31,9 +31,9 @@ class PlannersController < ApplicationController
 
         @planner = baby.planners.build(wake_time: params[:planners][:wake_time], bed_time: params[:planners][:bed_time],
         notes: params[:planners][:notes], morning_nap_start_time: params[:planners][:morning_nap_start_time],
-        morning_nap_end_time: params[:planners][:morning_nap_end_time], midday_nap_start_time: params[:planners][:midday_nap_start_time],
-        midday_nap_end_time: params[:planners][:midday_nap_end_time], late_afternoon_nap_start_time: params[:planners][:late_afternoon_nap_start_time],
-        late_afternoon_nap_end_time: params[:planners][:late_afternoon_nap_end_time] )
+        morning_nap_end_time: params[:planners][:morning_nap_end_time], morning_nap_total_time: params[:planners][:morning_nap_total_time], midday_nap_start_time: params[:planners][:midday_nap_start_time],
+        midday_nap_end_time: params[:planners][:midday_nap_end_time], midday_nap_total_time: params[:planners][:midday_nap_total_time], late_afternoon_nap_start_time: params[:planners][:late_afternoon_nap_start_time],
+        late_afternoon_nap_end_time: params[:planners][:late_afternoon_nap_end_time], late_afternoon_nap_total_time: params[:planners][:late_afternoon_nap_total_time], )
         @planner.save
         redirect "/planners/#{@planner.id}"
 
@@ -44,9 +44,9 @@ class PlannersController < ApplicationController
 
         @planner = baby.planners.build(wake_time: params[:planners][:wake_time], bed_time: params[:planners][:bed_time],
         notes: params[:planners][:notes], morning_nap_start_time: params[:planners][:morning_nap_start_time],
-        morning_nap_end_time: params[:planners][:morning_nap_end_time], midday_nap_start_time: params[:planners][:midday_nap_start_time],
-        midday_nap_end_time: params[:planners][:midday_nap_end_time], late_afternoon_nap_start_time: params[:planners][:late_afternoon_nap_start_time],
-        late_afternoon_nap_end_time: params[:planners][:late_afternoon_nap_end_time] )
+        morning_nap_end_time: params[:planners][:morning_nap_end_time], morning_nap_total_time: params[:planners][:morning_nap_total_time], midday_nap_start_time: params[:planners][:midday_nap_start_time],
+        midday_nap_end_time: params[:planners][:midday_nap_end_time], midday_nap_total_time: params[:planners][:midday_nap_total_time], late_afternoon_nap_start_time: params[:planners][:late_afternoon_nap_start_time],
+        late_afternoon_nap_end_time: params[:planners][:late_afternoon_nap_end_time], late_afternoon_nap_total_time: params[:planners][:late_afternoon_nap_total_time], )
         @planner.save
         redirect "/planners/#{@planner.id}"
 
@@ -97,9 +97,10 @@ class PlannersController < ApplicationController
 
           @planner.update(wake_time: params[:planners][:wake_time], bed_time: params[:planners][:bed_time],
           notes: params[:planners][:notes], morning_nap_start_time: params[:planners][:morning_nap_start_time],
-          morning_nap_end_time: params[:planners][:morning_nap_end_time], midday_nap_start_time: params[:planners][:midday_nap_start_time],
-          midday_nap_end_time: params[:planners][:midday_nap_end_time], late_afternoon_nap_start_time: params[:planners][:late_afternoon_nap_start_time],
-          late_afternoon_nap_end_time: params[:planners][:late_afternoon_nap_end_time] )
+          morning_nap_end_time: params[:planners][:morning_nap_end_time], morning_nap_total_time: params[:planners][:morning_nap_total_time], midday_nap_start_time: params[:planners][:midday_nap_start_time],
+          midday_nap_end_time: params[:planners][:midday_nap_end_time], midday_nap_total_time: params[:planners][:midday_nap_total_time], late_afternoon_nap_start_time: params[:planners][:late_afternoon_nap_start_time],
+          late_afternoon_nap_end_time: params[:planners][:late_afternoon_nap_end_time], late_afternoon_nap_total_time: params[:planners][:late_afternoon_nap_total_time], )
+
 
           redirect "/planners/#{@planner.id}"
       end
