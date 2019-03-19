@@ -13,7 +13,7 @@
 <br>
 
 
-<%@baby.planners.order(created_at: :desc).each do |p| %>
+<%@baby.planners.order_newest.each do |p| %>
 
   <h3>Date: <%=p.created_at.strftime("%m-%d-%Y")%></h3></a>
   <h4>Notes: <%=p.notes%></h4>
