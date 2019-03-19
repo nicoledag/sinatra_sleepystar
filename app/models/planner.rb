@@ -6,4 +6,10 @@ class Planner < ActiveRecord::Base
   #planner.babies
 
 
+  def self.order_newest
+
+    self.order(created_at: :desc)
+
+  end
+
 end
