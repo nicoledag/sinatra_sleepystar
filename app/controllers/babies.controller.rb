@@ -2,12 +2,9 @@ class BabiesController < ApplicationController
 
   #index route for all baby entries.
   get '/babies' do
-    if logged_in?
+      redirect_if_not_logged_in
       @babies = current_user.babies
       erb :'babies/babies'
-    else
-     redirect '/login'
-    end
   end
 
 
@@ -95,6 +92,12 @@ class BabiesController < ApplicationController
 
  def find_baby_by_params_id
    @baby = Baby.find_by(id: params[:id])
+ end
+
+ def redirect_if_not_logged_in
+   if !logged_in?
+     redirect '/login'
+   end
  end
 
 
