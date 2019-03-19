@@ -3,22 +3,16 @@ class PlannersController < ApplicationController
 
 #index route for all planner entries.
   get '/planners' do
-    if logged_in?
+    redirect_if_not_logged_in
       @planners = current_user.planners.order(created_at: :desc)
       erb :'planners/planners'
-    else
-     redirect '/login'
-    end
   end
 
   # get planners/new to render a form to create a new entry.
   get '/planners/new' do
-    if logged_in?
+    redirect_if_not_logged_in
       @babies = current_user.babies
      erb :'/planners/new'
-    else
-     redirect '/login'
-   end
   end
 
   #post planners to create a new planner entry.
@@ -54,13 +48,10 @@ class PlannersController < ApplicationController
 
   #show route for a planner entry.
   get '/planners/:id' do
-    if logged_in?
+    redirect_if_not_logged_in
       find_planner_by_params_id
 
       erb :'/planners/show_planner'
-    else
-      redirect '/login'
-    end
   end
 
 
@@ -68,7 +59,7 @@ class PlannersController < ApplicationController
 
   get '/planners/:id/edit' do
 
-   if logged_in?
+   redirect_if_not_logged_in
      find_planner_by_params_id
      @babies = current_user.babies
      if planner_baby_user_equals_current_user
@@ -76,13 +67,11 @@ class PlannersController < ApplicationController
      else
        redirect '/babies'
      end
-   else redirect '/login'
-   end
  end
 
   #patch planners to update a planner.
   patch '/planners/:id' do
-    if logged_in?
+    redirect_if_not_logged_in
       find_planner_by_params_id
         if planner_baby_user_equals_current_user
 
@@ -95,14 +84,11 @@ class PlannersController < ApplicationController
 
           redirect "/planners/#{@planner.id}"
       end
-    else
-      redirect '/login'
-    end
   end
 
   #delete planners to delete a planner.
   delete '/planners/:id' do
-    if logged_in?
+    redirect_if_not_logged_in
        find_planner_by_params_id
         if planner_baby_user_equals_current_user
           @planner.destroy
@@ -111,9 +97,6 @@ class PlannersController < ApplicationController
         else
           redirect '/babies'
         end
-     else
-       redirect '/login'
-     end
   end
 
   private
