@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   post '/signup' do
     #prevents some from signing up twice with the same username.
-    user = User.find_by(:email => params[:email])
+    user = User.find_by(:username => params[:username])
 
     if user != nil
       flash[:message] = "The user entered already exists.  Please try logging in"
