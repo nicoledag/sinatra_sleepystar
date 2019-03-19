@@ -32,6 +32,13 @@ class ApplicationController < Sinatra::Base
       #the first time current_user is referenced and user is found.
       #subsequent call if already populated won't hit database again
     end
+
+    def redirect_if_not_logged_in
+      if !logged_in?
+        redirect '/login'
+      end
+    end
+    
   end
 
 
