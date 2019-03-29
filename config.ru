@@ -12,4 +12,4 @@ use BabiesController
 use PlannersController
 
 run ApplicationController
-run Sinatra::Application
+# run Sinatra::Application
