@@ -116,6 +116,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 4.2, >= 4.2.6)
   bcrypt
+  bundler (~> 1.16, >= 1.16.1)
   capybara
   database_cleaner!
   pg (~> 0.20)
@@ -136,4 +137,4 @@ RUBY VERSION
    ruby 2.6.1p33
 
 BUNDLED WITH
-   2.0.1
+   1.16.1
