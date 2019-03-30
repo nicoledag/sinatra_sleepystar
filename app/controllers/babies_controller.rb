@@ -31,7 +31,6 @@ class BabiesController < ApplicationController
 
   #show route for a baby entry.
   get '/babies/:id' do
-
       redirect_if_not_logged_in
       find_baby_by_params_id
       erb :'/babies/show_baby'
