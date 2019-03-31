@@ -1,4 +1,4 @@
-class AddAttributesToPlannersTable < ActiveRecord::Migration
+class AddAttributesToPlannersTable < ActiveRecord::Migration[4.2]
   def change
     add_column :planners, :morning_nap_start_time, :string
     add_column :planners, :morning_nap_end_time, :string

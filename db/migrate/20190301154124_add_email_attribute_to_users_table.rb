@@ -1,4 +1,4 @@
-class AddEmailAttributeToUsersTable < ActiveRecord::Migration
+class AddEmailAttributeToUsersTable < ActiveRecord::Migration[4.2]
   def change
     add_column :users, :email, :string
   end
