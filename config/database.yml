@@ -4,10 +4,10 @@ development:
  database: development
  host: localhost
  pool: 2
- 
+
 production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  host: <%= ENV[‘DATABASE_HOST’] %>
+  host: <%= ENV['DATABASE_HOST'] %>
   database: production
