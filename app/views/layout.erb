@@ -27,7 +27,9 @@
           <a href="/planners/new">Add Planner</a>
           <a href="/babies">View Baby's Planners</a>
           <!-- <a href="/planners">View All Planners</a> -->
+          <% if current_user %>
           <a href="/logout">Logout</a>
+          <%end%>
           <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
           </a>
